@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "\\\\Mac\\Home\\Desktop\\Conestoga College\\SmartProductQuotationTool\\SmartProductQuotationTool\\SmartProductQuotationTool.csproj": {}
+    "C:\\Users\\chc39\\Source\\Repos\\SmartProductQuodationTool_TeamK\\SmartProductQuotationTool\\SmartProductQuotationTool.csproj": {}
   },
   "projects": {
-    "\\\\Mac\\Home\\Desktop\\Conestoga College\\SmartProductQuotationTool\\SmartProductQuotationTool\\SmartProductQuotationTool.csproj": {
+    "C:\\Users\\chc39\\Source\\Repos\\SmartProductQuodationTool_TeamK\\SmartProductQuotationTool\\SmartProductQuotationTool.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\Conestoga College\\SmartProductQuotationTool\\SmartProductQuotationTool\\SmartProductQuotationTool.csproj",
+        "projectUniqueName": "C:\\Users\\chc39\\Source\\Repos\\SmartProductQuodationTool_TeamK\\SmartProductQuotationTool\\SmartProductQuotationTool.csproj",
         "projectName": "SmartProductQuotationTool",
-        "projectPath": "\\\\Mac\\Home\\Desktop\\Conestoga College\\SmartProductQuotationTool\\SmartProductQuotationTool\\SmartProductQuotationTool.csproj",
-        "packagesPath": "C:\\Users\\boa\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Desktop\\Conestoga College\\SmartProductQuotationTool\\SmartProductQuotationTool\\obj\\",
+        "projectPath": "C:\\Users\\chc39\\Source\\Repos\\SmartProductQuodationTool_TeamK\\SmartProductQuotationTool\\SmartProductQuotationTool.csproj",
+        "packagesPath": "C:\\Users\\chc39\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\chc39\\Source\\Repos\\SmartProductQuodationTool_TeamK\\SmartProductQuotationTool\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\boa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\chc39\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -46,17 +51,17 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[6.0.16, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[6.0.16, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[6.0.16, )"
             }
           },
           "imports": [
@@ -78,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

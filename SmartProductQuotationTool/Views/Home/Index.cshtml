@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (Inventory item in Model.Inventories)
+            @foreach (var item in Model.Inventories)
             {
                 <tr>
                     <td>@item.Name</td>
@@ -30,4 +30,4 @@
             }
         </tbody>
     </table>
-</div>s
+</div>

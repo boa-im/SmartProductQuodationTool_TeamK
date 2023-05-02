@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using SmartProductQuotationTool.DataAccess;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var connStr = builder.Configuration.GetConnectionString("SPQTDB");
+builder.Services.AddDbContext<SPQTDbContext>(options => options.UseSqlServer(connStr));
 
 var app = builder.Build();
 

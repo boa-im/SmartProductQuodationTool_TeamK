@@ -6,9 +6,9 @@ using SmartProductQuotationTool.Entities;
 
 namespace SmartProductQuotationTool.DataAccess
 {
-    public class DbContext : IdentityDbContext<User>
+    public class SPQTDbContext : DbContext
     {
-        public static async Task CreateAdminUser(IServiceProvider serviceProvider)
+        /*public static async Task CreateAdminUser(IServiceProvider serviceProvider)
         {
             UserManager<User> userManager =
                 serviceProvider.GetRequiredService<UserManager<User>>();
@@ -35,14 +35,16 @@ namespace SmartProductQuotationTool.DataAccess
                     await userManager.AddToRoleAsync(user, roleName);
                 }
             }
-        }
+        }*/
 
-        public DbContext(DbContextOptions<DbContext> options)
+        public SPQTDbContext(DbContextOptions<SPQTDbContext> options)
             : base(options)
         {
         }
 
         public DbSet<Inventory> Inventories { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Cart> Carts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
