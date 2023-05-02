@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = \\Mac\Home\Desktop\Conestoga College\SmartProductQuotationTool\SmartProductQuotationTool
 build_property._RazorSourceGeneratorDebug = 
 
+[//Mac/Home/Desktop/Conestoga College/SmartProductQuotationTool/SmartProductQuotationTool/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [//Mac/Home/Desktop/Conestoga College/SmartProductQuotationTool/SmartProductQuotationTool/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
