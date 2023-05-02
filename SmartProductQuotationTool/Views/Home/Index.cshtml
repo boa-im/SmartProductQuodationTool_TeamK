@@ -23,9 +23,9 @@
                     <td>@item.Name</td>
                     <td>@item.Description</td>
                     <td>@item.PVCode</td>
-                    <td>$@item.Price</td>
-                    <td>$(@item.Price * @Model.DiscountRate)</td>
-                    <td><a href="#">Add to cart</a></td>
+                    <td>$@item.Price.ToString("#,##0.00")</td>
+                    <td>$@((item.Price * Model.DiscountRate).ToString("#,##0.00"))</td>
+                    <td><a href="#" class="btn btn-primary">Add to cart</a></td>
                 </tr>
             }
         </tbody>

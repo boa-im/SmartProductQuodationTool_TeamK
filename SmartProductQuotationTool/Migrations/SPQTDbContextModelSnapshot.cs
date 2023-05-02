@@ -22,6 +22,139 @@ namespace SmartProductQuotationTool.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
+                });
+
             modelBuilder.Entity("SmartProductQuotationTool.Entities.Cart", b =>
                 {
                     b.Property<int>("CartId")
@@ -57,13 +190,16 @@ namespace SmartProductQuotationTool.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("Level")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PVCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double?>("Price")
+                    b.Property<double>("Price")
                         .HasColumnType("float");
 
                     b.Property<int?>("Qty")
@@ -80,6 +216,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 1,
                             Description = "",
+                            Level = 1,
                             Name = "FX-401R",
                             PVCode = "B",
                             Price = 3600.0,
@@ -89,6 +226,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 2,
                             Description = "",
+                            Level = 1,
                             Name = "FX-401B",
                             PVCode = "B",
                             Price = 3600.0,
@@ -98,6 +236,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 3,
                             Description = "",
+                            Level = 2,
                             Name = "RAX-LCD-LITE",
                             PVCode = "B",
                             Price = 1400.0,
@@ -107,6 +246,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 4,
                             Description = "",
+                            Level = 2,
                             Name = "RAM-1032TZDS",
                             PVCode = "A",
                             Price = 825.0,
@@ -116,6 +256,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 5,
                             Description = "",
+                            Level = 2,
                             Name = "RAM-1032TZDS-CC",
                             PVCode = "B",
                             Price = 1120.0,
@@ -125,6 +266,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 6,
                             Description = "",
+                            Level = 2,
                             Name = "RAX-1048TZDS",
                             PVCode = "A",
                             Price = 555.0,
@@ -134,6 +276,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 7,
                             Description = "",
+                            Level = 2,
                             Name = "RAX-1048TZDS-CC",
                             PVCode = "B",
                             Price = 830.0,
@@ -143,6 +286,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 8,
                             Description = "",
+                            Level = 3,
                             Name = "UIMA4",
                             PVCode = "A",
                             Price = 295.0,
@@ -152,6 +296,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 9,
                             Description = "",
+                            Level = 3,
                             Name = "MGC-CONFIG-KIT4",
                             PVCode = "B",
                             Price = 425.0,
@@ -161,6 +306,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 10,
                             Description = "",
+                            Level = 4,
                             Name = "ALC-480",
                             PVCode = "B",
                             Price = 1160.0,
@@ -170,6 +316,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 11,
                             Description = "",
+                            Level = 4,
                             Name = "PR-300",
                             PVCode = "B",
                             Price = 255.0,
@@ -179,6 +326,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 12,
                             Description = "",
+                            Level = 4,
                             Name = "AGD-048",
                             PVCode = "B",
                             Price = 815.0,
@@ -188,6 +336,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 13,
                             Description = "",
+                            Level = 4,
                             Name = "MGD-32",
                             PVCode = "B",
                             Price = 1105.0,
@@ -197,6 +346,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 14,
                             Description = "",
+                            Level = 4,
                             Name = "PCS-100",
                             PVCode = "B",
                             Price = 210.0,
@@ -206,6 +356,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 15,
                             Description = "",
+                            Level = 4,
                             Name = "MP-3500W",
                             PVCode = "B",
                             Price = 35.0,
@@ -215,6 +366,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 16,
                             Description = "",
+                            Level = 4,
                             Name = "SRM-312R",
                             PVCode = "C",
                             Price = 780.0,
@@ -224,6 +376,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 17,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1001DR",
                             PVCode = "B",
                             Price = 285.0,
@@ -233,6 +386,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 18,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1001D",
                             PVCode = "A",
                             Price = 285.0,
@@ -242,6 +396,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 19,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1001DB",
                             PVCode = "B",
                             Price = 285.0,
@@ -251,6 +406,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 20,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1001DS",
                             PVCode = "C",
                             Price = 490.0,
@@ -260,6 +416,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 21,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1001WPRA",
                             PVCode = "B",
                             Price = 1075.0,
@@ -269,6 +426,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 22,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1001WPA",
                             PVCode = "B",
                             Price = 1075.0,
@@ -278,6 +436,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 23,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1002DR",
                             PVCode = "B",
                             Price = 515.0,
@@ -287,6 +446,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 24,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1002D",
                             PVCode = "B",
                             Price = 515.0,
@@ -296,6 +456,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 25,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1002DB",
                             PVCode = "B",
                             Price = 515.0,
@@ -305,6 +466,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 26,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1002DS",
                             PVCode = "C",
                             Price = 590.0,
@@ -314,6 +476,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 27,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1002WPRA",
                             PVCode = "B",
                             Price = 1335.0,
@@ -323,6 +486,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 28,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1002WPA",
                             PVCode = "C",
                             Price = 1335.0,
@@ -332,6 +496,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 29,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1003DR",
                             PVCode = "C",
                             Price = 640.0,
@@ -341,6 +506,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 30,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1003D",
                             PVCode = "B",
                             Price = 640.0,
@@ -350,6 +516,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 31,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1003DB",
                             PVCode = "C",
                             Price = 640.0,
@@ -359,6 +526,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 32,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1003DS",
                             PVCode = "C",
                             Price = 900.0,
@@ -368,6 +536,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 33,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1008DR",
                             PVCode = "C",
                             Price = 1590.0,
@@ -377,6 +546,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 34,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1008D",
                             PVCode = "B",
                             Price = 1590.0,
@@ -386,6 +556,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 35,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1008DB",
                             PVCode = "C",
                             Price = 1590.0,
@@ -395,6 +566,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 36,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1012DR",
                             PVCode = "C",
                             Price = 1770.0,
@@ -404,6 +576,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 37,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1012D",
                             PVCode = "C",
                             Price = 1770.0,
@@ -413,6 +586,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 38,
                             Description = "",
+                            Level = 5,
                             Name = "BB-1012DB",
                             PVCode = "C",
                             Price = 1770.0,
@@ -422,6 +596,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 39,
                             Description = "",
+                            Level = 6,
                             Name = "MIX-4010",
                             PVCode = "A",
                             Price = 130.0,
@@ -431,6 +606,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 40,
                             Description = "",
+                            Level = 6,
                             Name = "MIX-4010-ISO",
                             PVCode = "A",
                             Price = 140.0,
@@ -440,6 +616,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 41,
                             Description = "",
+                            Level = 6,
                             Name = "MIX-4020",
                             PVCode = "A",
                             Price = 160.0,
@@ -449,6 +626,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 42,
                             Description = "",
+                            Level = 6,
                             Name = "MIX-4020-ISO",
                             PVCode = "B",
                             Price = 170.0,
@@ -458,6 +636,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 43,
                             Description = "",
+                            Level = 6,
                             Name = "MIX-4030",
                             PVCode = "A",
                             Price = 110.0,
@@ -467,6 +646,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 44,
                             Description = "",
+                            Level = 6,
                             Name = "MIX-4030-ISO",
                             PVCode = "A",
                             Price = 120.0,
@@ -476,6 +656,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 45,
                             Description = "",
+                            Level = 6,
                             Name = "MIX-4001",
                             PVCode = "A",
                             Price = 28.0,
@@ -485,6 +666,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 46,
                             Description = "",
+                            Level = 6,
                             Name = "MIX-4002",
                             PVCode = "A",
                             Price = 24.0,
@@ -494,6 +676,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 47,
                             Description = "",
+                            Level = 6,
                             Name = "MIX-4003-R",
                             PVCode = "B",
                             Price = 140.0,
@@ -503,6 +686,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 48,
                             Description = "",
+                            Level = 6,
                             Name = "MIX-4003-S",
                             PVCode = "B",
                             Price = 1275.0,
@@ -512,6 +696,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 49,
                             Description = "",
+                            Level = 6,
                             Name = "MIX-4090",
                             PVCode = "A",
                             Price = 600.0,
@@ -521,6 +706,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 50,
                             Description = "",
+                            Level = 6,
                             Name = "MIX-4040",
                             PVCode = "A",
                             Price = 130.0,
@@ -530,6 +716,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 51,
                             Description = "",
+                            Level = 6,
                             Name = "MIX-4041",
                             PVCode = "A",
                             Price = 110.0,
@@ -539,6 +726,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 52,
                             Description = "",
+                            Level = 6,
                             Name = "MIX-4042",
                             PVCode = "B",
                             Price = 195.0,
@@ -548,6 +736,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 53,
                             Description = "",
+                            Level = 6,
                             Name = "MIX-4045",
                             PVCode = "A",
                             Price = 150.0,
@@ -557,6 +746,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 54,
                             Description = "",
+                            Level = 6,
                             Name = "MIX-4046",
                             PVCode = "A",
                             Price = 160.0,
@@ -566,6 +756,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 55,
                             Description = "",
+                            Level = 6,
                             Name = "MIX-4050",
                             PVCode = "A",
                             Price = 170.0,
@@ -575,6 +766,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 56,
                             Description = "",
+                            Level = 6,
                             Name = "MIX-4070",
                             PVCode = "A",
                             Price = 115.0,
@@ -584,6 +776,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 57,
                             Description = "",
+                            Level = 7,
                             Name = "MPS-810MP",
                             PVCode = "N",
                             Price = 190.0,
@@ -593,6 +786,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 58,
                             Description = "",
+                            Level = 7,
                             Name = "MPS-802MP",
                             PVCode = "N",
                             Price = 200.0,
@@ -602,6 +796,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 59,
                             Description = "",
+                            Level = 7,
                             Name = "MPS-822MP",
                             PVCode = "N",
                             Price = 210.0,
@@ -611,6 +806,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 60,
                             Description = "",
+                            Level = 7,
                             Name = "BB-800",
                             PVCode = "N",
                             Price = 45.0,
@@ -639,6 +835,7 @@ namespace SmartProductQuotationTool.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Country")
@@ -648,7 +845,8 @@ namespace SmartProductQuotationTool.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
@@ -660,10 +858,12 @@ namespace SmartProductQuotationTool.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("NormalizedEmail")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("NormalizedUserName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
@@ -690,25 +890,34 @@ namespace SmartProductQuotationTool.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("Website")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
 
                     b.HasData(
                         new
                         {
-                            Id = "b307ccdb-b3b1-411c-89b5-c7f17ceeda07",
+                            Id = "866ee683-3922-424e-9d72-8c5ea0c323fb",
                             AccessFailedCount = 0,
                             Address1 = "1750 Finch Ave E",
                             Address2 = "",
                             City = "North York",
                             CompanyName = "Seneca College",
-                            ConcurrencyStamp = "be50c556-ac5f-48f5-95f1-5e1f540d62b1",
+                            ConcurrencyStamp = "38773522-0928-4e3d-884e-fb7c67251b13",
                             Country = "Canada",
                             Discount = 66.0,
                             EmailConfirmed = false,
@@ -718,20 +927,20 @@ namespace SmartProductQuotationTool.Migrations
                             PhoneNumberConfirmed = false,
                             PostalCode = "M2J 2X5",
                             Province = "ON",
-                            SecurityStamp = "5bf7cee4-8635-486e-bd71-aa125ff2b477",
+                            SecurityStamp = "21c92710-53d1-41bb-94a5-f06e7004825d",
                             TwoFactorEnabled = false,
                             UserName = "MTL-000001",
                             Website = "https://www.senecacollege.ca/home.html"
                         },
                         new
                         {
-                            Id = "9259db75-391d-4249-9776-f4923127d936",
+                            Id = "91ebd211-ac62-43ee-9c91-fa27bd46e12b",
                             AccessFailedCount = 0,
                             Address1 = "108 University Ave",
                             Address2 = "",
                             City = "Waterloo",
                             CompanyName = "Conestoga College",
-                            ConcurrencyStamp = "d021ea82-5032-43fb-bd21-f3c6b3abf66f",
+                            ConcurrencyStamp = "19574602-41a8-4652-9cc5-ad1ba2a9cae2",
                             Country = "Canada",
                             Discount = 68.0,
                             EmailConfirmed = false,
@@ -741,20 +950,20 @@ namespace SmartProductQuotationTool.Migrations
                             PhoneNumberConfirmed = false,
                             PostalCode = "N2J 2W2",
                             Province = "ON",
-                            SecurityStamp = "845a842f-31f9-4dd3-b346-7a77524b2677",
+                            SecurityStamp = "e5a629e0-008f-4b52-a62a-f8aedb7835b0",
                             TwoFactorEnabled = false,
                             UserName = "MTL-000002",
                             Website = "https://www.conestogac.on.ca"
                         },
                         new
                         {
-                            Id = "bfe76dd5-13bf-4f87-b227-8d856768907c",
+                            Id = "630bc74e-7c74-4758-b966-86660ee4c396",
                             AccessFailedCount = 0,
                             Address1 = "200 University Ave W",
                             Address2 = "",
                             City = "Waterloo",
                             CompanyName = "University of Waterloo",
-                            ConcurrencyStamp = "ea363e0a-f8cd-41f8-b388-bfcc46e63027",
+                            ConcurrencyStamp = "e7e63c27-9ea1-4f96-936a-0a3ce7280b37",
                             Country = "Canada",
                             Discount = 70.0,
                             EmailConfirmed = false,
@@ -764,20 +973,20 @@ namespace SmartProductQuotationTool.Migrations
                             PhoneNumberConfirmed = false,
                             PostalCode = "N2L 3G1",
                             Province = "ON",
-                            SecurityStamp = "58df2bce-2096-4161-a277-a61096efb661",
+                            SecurityStamp = "55b3d340-f1d1-4a06-9046-0f5ed6eba65d",
                             TwoFactorEnabled = false,
                             UserName = "MTL-000003",
                             Website = "https://uwaterloo.ca"
                         },
                         new
                         {
-                            Id = "2d20eca2-5488-4f15-83e8-f0ed67f749db",
+                            Id = "2c2fd1f2-8d63-4f87-8efe-5829ae28358b",
                             AccessFailedCount = 0,
                             Address1 = "27 King's College Circle",
                             Address2 = "",
                             City = "Waterloo",
                             CompanyName = "University of Toronto",
-                            ConcurrencyStamp = "0dc13c29-21b8-4bac-9afa-48e7aba74e9d",
+                            ConcurrencyStamp = "010f56ed-52df-4189-a70f-d2054a081d82",
                             Country = "Canada",
                             Discount = 72.0,
                             EmailConfirmed = false,
@@ -787,11 +996,62 @@ namespace SmartProductQuotationTool.Migrations
                             PhoneNumberConfirmed = false,
                             PostalCode = "M5S 1A1",
                             Province = "ON",
-                            SecurityStamp = "539510ea-ed67-430b-9107-d78c7ad9b14b",
+                            SecurityStamp = "5416e4c6-577e-481f-8264-3bdd07209235",
                             TwoFactorEnabled = false,
                             UserName = "MTL-000004",
                             Website = "https://www.utoronto.ca"
                         });
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("SmartProductQuotationTool.Entities.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("SmartProductQuotationTool.Entities.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SmartProductQuotationTool.Entities.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("SmartProductQuotationTool.Entities.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("SmartProductQuotationTool.Entities.Cart", b =>

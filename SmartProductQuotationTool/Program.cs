@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SmartProductQuotationTool.DataAccess;
+using SmartProductQuotationTool.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,13 @@ builder.Services.AddControllersWithViews();
 
 var connStr = builder.Configuration.GetConnectionString("SPQTDB");
 builder.Services.AddDbContext<SPQTDbContext>(options => options.UseSqlServer(connStr));
+
+// add Identity services:
+builder.Services.AddIdentity<User, IdentityRole>(options => {
+    options.Password.RequiredLength = 6;
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequireDigit = true;
+}).AddEntityFrameworkStores<SPQTDbContext>().AddDefaultTokenProviders();
 
 var app = builder.Build();
 
@@ -29,5 +38,12 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+// Here we call our static method to create an admin user (if needed)
+var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
+using (var scope = scopeFactory.CreateScope())
+{
+    await SPQTDbContext.CreateAdminUser(scope.ServiceProvider);
+}
 
 app.Run();

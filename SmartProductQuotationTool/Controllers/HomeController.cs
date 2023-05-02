@@ -1,27 +1,36 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SmartProductQuotationTool.DataAccess;
 using SmartProductQuotationTool.Models;
 using System.Diagnostics;
+
+
 
 namespace SmartProductQuotationTool.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private SPQTDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+
+
+        public HomeController(SPQTDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
+
+
 
         public IActionResult Index()
         {
-            return View();
+            ListViewModel listViewModel = new ListViewModel()
+            {
+                Inventories = _context.Inventories.ToList(),
+                DiscountRate = 1.0
+            };
+            return View(listViewModel);
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\SmartProductQuotationTool",
+    "\\SmartProductQuotationTool\\DataAccess",
+    "\\SmartProductQuotationTool\\Migrations"
+  ],
+  "SelectedNode": "\\SmartProductQuotationTool\\DataAccess\\SPQTDbContext.cs",
+  "PreviewInSolutionExplorer": false
+}
