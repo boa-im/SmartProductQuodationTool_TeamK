@@ -6,7 +6,6 @@
         public ICollection<Inventory>? Inventories { get; set; }
 
         // FK
-        public int UserId { get; set; }
         public User? User { get; set; }
     }
 }

@@ -28,8 +28,6 @@ namespace SmartProductQuotationTool.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CompanyName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Address1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -40,6 +38,7 @@ namespace SmartProductQuotationTool.Migrations
                     PostalCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Website = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Discount = table.Column<double>(type: "float", nullable: true),
+                    UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -170,15 +169,14 @@ namespace SmartProductQuotationTool.Migrations
                 {
                     CartId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    UserId1 = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Carts", x => x.CartId);
                     table.ForeignKey(
-                        name: "FK_Carts_AspNetUsers_UserId1",
-                        column: x => x.UserId1,
+                        name: "FK_Carts_AspNetUsers_UserId",
+                        column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id");
                 });
@@ -209,13 +207,13 @@ namespace SmartProductQuotationTool.Migrations
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "Address1", "Address2", "City", "CompanyName", "ConcurrencyStamp", "Country", "Discount", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "Password", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "PostalCode", "Province", "SecurityStamp", "TwoFactorEnabled", "UserName", "Website" },
+                columns: new[] { "Id", "AccessFailedCount", "Address1", "Address2", "City", "CompanyName", "ConcurrencyStamp", "Country", "Discount", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "PostalCode", "Province", "SecurityStamp", "TwoFactorEnabled", "UserName", "Website" },
                 values: new object[,]
                 {
-                    { "2c2fd1f2-8d63-4f87-8efe-5829ae28358b", 0, "27 King's College Circle", "", "Waterloo", "University of Toronto", "010f56ed-52df-4189-a70f-d2054a081d82", "Canada", 72.0, null, false, false, null, null, null, "password4", null, "444-444-4444", false, "M5S 1A1", "ON", "5416e4c6-577e-481f-8264-3bdd07209235", false, "MTL-000004", "https://www.utoronto.ca" },
-                    { "630bc74e-7c74-4758-b966-86660ee4c396", 0, "200 University Ave W", "", "Waterloo", "University of Waterloo", "e7e63c27-9ea1-4f96-936a-0a3ce7280b37", "Canada", 70.0, null, false, false, null, null, null, "password3", null, "333-333-3333", false, "N2L 3G1", "ON", "55b3d340-f1d1-4a06-9046-0f5ed6eba65d", false, "MTL-000003", "https://uwaterloo.ca" },
-                    { "866ee683-3922-424e-9d72-8c5ea0c323fb", 0, "1750 Finch Ave E", "", "North York", "Seneca College", "38773522-0928-4e3d-884e-fb7c67251b13", "Canada", 66.0, null, false, false, null, null, null, "password1", null, "111-111-1111", false, "M2J 2X5", "ON", "21c92710-53d1-41bb-94a5-f06e7004825d", false, "MTL-000001", "https://www.senecacollege.ca/home.html" },
-                    { "91ebd211-ac62-43ee-9c91-fa27bd46e12b", 0, "108 University Ave", "", "Waterloo", "Conestoga College", "19574602-41a8-4652-9cc5-ad1ba2a9cae2", "Canada", 68.0, null, false, false, null, null, null, "password2", null, "222-222-2222", false, "N2J 2W2", "ON", "e5a629e0-008f-4b52-a62a-f8aedb7835b0", false, "MTL-000002", "https://www.conestogac.on.ca" }
+                    { "145f595f-a120-4dba-9d72-71180cec2980", 0, "200 University Ave W", "", "Waterloo", "University of Waterloo", "9c34d9b2-59d0-4bb2-8a1a-91d38b9d956b", "Canada", 70.0, null, false, false, null, null, null, "Password3#", "333-333-3333", false, "N2L 3G1", "ON", "8757fd25-4b59-4583-a1a4-a6f95615a6a1", false, "MTL-000003", "https://uwaterloo.ca" },
+                    { "5e84e903-7586-426d-bc31-5b40090f8bd9", 0, "108 University Ave", "", "Waterloo", "Conestoga College", "2ca957e5-4eee-492c-860e-0e8d125002ad", "Canada", 68.0, null, false, false, null, null, null, "Password2#", "222-222-2222", false, "N2J 2W2", "ON", "ef93b27b-e069-4c5c-9d91-99e4358f33a0", false, "MTL-000002", "https://www.conestogac.on.ca" },
+                    { "b76d7579-f289-49e5-9420-ee1c7dff2556", 0, "1750 Finch Ave E", "", "North York", "Seneca College", "67843b75-6c0a-479d-a151-885c5a966f56", "Canada", 66.0, null, false, false, null, null, null, "Password1#", "111-111-1111", false, "M2J 2X5", "ON", "b3642e0d-d864-4376-b81f-fcb480eb97f3", false, "MTL-000001", "https://www.senecacollege.ca/home.html" },
+                    { "c4e70837-bb78-422a-97c2-2cafb592aca6", 0, "27 King's College Circle", "", "Waterloo", "University of Toronto", "3a03e17b-b24b-409b-9dfe-03ebecd8c229", "Canada", 72.0, null, false, false, null, null, null, "Password4#", "444-444-4444", false, "M5S 1A1", "ON", "e3ad84c4-cbe5-4074-93a3-47e360eff6db", false, "MTL-000004", "https://www.utoronto.ca" }
                 });
 
             migrationBuilder.InsertData(
@@ -332,9 +330,9 @@ namespace SmartProductQuotationTool.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Carts_UserId1",
+                name: "IX_Carts_UserId",
                 table: "Carts",
-                column: "UserId1");
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Inventories_CartId",

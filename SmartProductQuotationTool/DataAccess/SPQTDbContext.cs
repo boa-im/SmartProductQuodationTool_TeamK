@@ -16,7 +16,7 @@ namespace SmartProductQuotationTool.DataAccess
                 .GetRequiredService<RoleManager<IdentityRole>>();
 
             string username = "admin";
-            string password = "admin";
+            string password = "Admin123#";
             string roleName = "Admin";
 
             // if role doesn't exist, create it
@@ -28,7 +28,7 @@ namespace SmartProductQuotationTool.DataAccess
             // if username doesn't exist, create it and add it to role
             if (await userManager.FindByNameAsync(username) == null)
             {
-                User user = new User { UserName = username };
+                User user = new User { UserName = username, DiscountRate = 0.50 };
                 var result = await userManager.CreateAsync(user, password);
                 if (result.Succeeded)
                 {
@@ -43,7 +43,6 @@ namespace SmartProductQuotationTool.DataAccess
         }
 
         public DbSet<Inventory> Inventories { get; set; }
-        public DbSet<User> Users { get; set; }
         public DbSet<Cart> Carts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -115,12 +114,12 @@ namespace SmartProductQuotationTool.DataAccess
                 new Inventory() { InventoryId = 60, Level = 7, Name = "BB-800", Description = "", Price = 45.00, PVCode = "N", Qty = 1 }
             );
             
-            modelBuilder.Entity<User>().HasData(
-                new User() { UserName = "MTL-000001", Password = "password1", CompanyName = "Seneca College", PhoneNumber = "111-111-1111", Address1 = "1750 Finch Ave E", Address2 = "", City="North York", Province = "ON", Country = "Canada", PostalCode = "M2J 2X5", Website= "https://www.senecacollege.ca/home.html", Discount=66.00 },
-                new User() { UserName = "MTL-000002", Password = "password2", CompanyName = "Conestoga College", PhoneNumber = "222-222-2222", Address1 = "108 University Ave", Address2 = "", City = "Waterloo", Province = "ON", Country = "Canada", PostalCode = "N2J 2W2", Website = "https://www.conestogac.on.ca", Discount = 68.00 },
-                new User() { UserName = "MTL-000003", Password = "password3", CompanyName = "University of Waterloo", PhoneNumber = "333-333-3333", Address1 = "200 University Ave W", Address2 = "", City = "Waterloo", Province = "ON", Country = "Canada", PostalCode = "N2L 3G1", Website = "https://uwaterloo.ca", Discount = 70.00 },
-                new User() { UserName = "MTL-000004", Password = "password4", CompanyName = "University of Toronto", PhoneNumber = "444-444-4444", Address1 = "27 King's College Circle", Address2 = "", City = "Waterloo", Province = "ON", Country = "Canada", PostalCode = "M5S 1A1", Website = "https://www.utoronto.ca", Discount = 72.00 }
-            );
+            /*modelBuilder.Entity<User>().HasData(
+                new User() { UserName = "MTL-000001", PasswordHash = "Password1#", CompanyName = "Seneca College", PhoneNumber = "111-111-1111", Address1 = "1750 Finch Ave E", Address2 = "", City="North York", Province = "ON", Country = "Canada", PostalCode = "M2J 2X5", Website= "https://www.senecacollege.ca/home.html", Discount=66.00 },
+                new User() { UserName = "MTL-000002", PasswordHash = "Password2#", CompanyName = "Conestoga College", PhoneNumber = "222-222-2222", Address1 = "108 University Ave", Address2 = "", City = "Waterloo", Province = "ON", Country = "Canada", PostalCode = "N2J 2W2", Website = "https://www.conestogac.on.ca", Discount = 68.00 },
+                new User() { UserName = "MTL-000003", PasswordHash = "Password3#", CompanyName = "University of Waterloo", PhoneNumber = "333-333-3333", Address1 = "200 University Ave W", Address2 = "", City = "Waterloo", Province = "ON", Country = "Canada", PostalCode = "N2L 3G1", Website = "https://uwaterloo.ca", Discount = 70.00 },
+                new User() { UserName = "MTL-000004", PasswordHash = "Password4#", CompanyName = "University of Toronto", PhoneNumber = "444-444-4444", Address1 = "27 King's College Circle", Address2 = "", City = "Waterloo", Province = "ON", Country = "Canada", PostalCode = "M5S 1A1", Website = "https://www.utoronto.ca", Discount = 72.00 }
+            );*/
         }
     }
 }
