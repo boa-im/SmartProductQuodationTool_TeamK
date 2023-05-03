@@ -1,0 +1,20 @@
+﻿@model Inventory
+
+
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+
+<h2>Confirm Deletion</h2>
+<h3>Are you sure want to delete '@Model.Name'? </h3>
+
+
+
+<form asp-controller="Admin" asp-action="Delete" method="POST">
+    <input type="hidden" asp-for="InventoryId" />
+    <button type="submit" class="btn btn-danger">DELETE</button>
+    <a asp-controller="Admin" asp-action="Manage" class="btn btn-secondary">CANCEL</a>
+</form>

@@ -5,6 +5,8 @@ using SmartProductQuotationTool.Entities;
 using SmartProductQuotationTool.Models;
 using System.Diagnostics;
 
+
+
 namespace SmartProductQuotationTool.Controllers
 {
     public class HomeController : Controller
@@ -13,6 +15,8 @@ namespace SmartProductQuotationTool.Controllers
         private UserManager<User> _userManager;
         private SignInManager<User> _signInManager;
 
+
+
         public HomeController(SPQTDbContext context, UserManager<User> userManager, SignInManager<User> signInManager)
         {
             _context = context;
@@ -20,24 +24,30 @@ namespace SmartProductQuotationTool.Controllers
             _signInManager = signInManager;
         }
 
-        public IActionResult Index()
+
+
+        public IActionResult Index(int level = 1)
         {
+            Nav.setActive(level);
             string? username = HttpContext.User.Identity.Name;
             var users = _userManager.Users.ToList();
             double discountRate = 0.00;
-            if(users.Find(u => u.UserName == username) != null)
+            if (users.Find(u => u.UserName == username) != null)
             {
-                discountRate = (double) users.Find(u => u.UserName == username).DiscountRate;
+                discountRate = (double)users.Find(u => u.UserName == username).DiscountRate;
             }
+
 
 
             ListViewModel listViewModel = new ListViewModel()
             {
-                Inventories = _context.Inventories.ToList(),
+                Inventories = _context.Inventories.Where(i => i.Level == level).ToList(),
                 DiscountRate = discountRate
             };
             return View(listViewModel);
         }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
