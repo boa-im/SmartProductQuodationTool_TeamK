@@ -28,11 +28,47 @@ namespace SmartProductQuotationTool.DataAccess
             // if username doesn't exist, create it and add it to role
             if (await userManager.FindByNameAsync(username) == null)
             {
-                User user = new User { UserName = username, DiscountRate = 0.50 };
+                User user = new User { UserName = username, DiscountRate = 0 };
                 var result = await userManager.CreateAsync(user, password);
                 if (result.Succeeded)
                 {
                     await userManager.AddToRoleAsync(user, roleName);
+                }
+            }
+        }
+
+        public static User[] users =
+        {
+            new User() { UserName = "MTL-000001", Password = "Password1#", CompanyName = "Seneca College", PhoneNumber = "111-111-1111", Address1 = "1750 Finch Ave E", Address2 = "", City="North York", Province = "ON", Country = "Canada", PostalCode = "M2J 2X5", Website= "https://www.senecacollege.ca/home.html", DiscountRate=66.00 },
+            new User() { UserName = "MTL-000002", Password = "Password2#", CompanyName = "Conestoga College", PhoneNumber = "222-222-2222", Address1 = "108 University Ave", Address2 = "", City = "Waterloo", Province = "ON", Country = "Canada", PostalCode = "N2J 2W2", Website = "https://www.conestogac.on.ca", DiscountRate = 68.00 },
+            new User() { UserName = "MTL-000003", Password = "Password3#", CompanyName = "University of Waterloo", PhoneNumber = "333-333-3333", Address1 = "200 University Ave W", Address2 = "", City = "Waterloo", Province = "ON", Country = "Canada", PostalCode = "N2L 3G1", Website = "https://uwaterloo.ca", DiscountRate = 70.00 },
+            new User() { UserName = "MTL-000004", Password = "Password4#", CompanyName = "University of Toronto", PhoneNumber = "444-444-4444", Address1 = "27 King's College Circle", Address2 = "", City = "Waterloo", Province = "ON", Country = "Canada", PostalCode = "M5S 1A1", Website = "https://www.utoronto.ca", DiscountRate = 72.00 }
+        };
+
+        public static async Task CreateUsers(IServiceProvider serviceProvider)
+        {
+            UserManager<User> userManager =
+                serviceProvider.GetRequiredService<UserManager<User>>();
+            RoleManager<IdentityRole> roleManager = serviceProvider
+                .GetRequiredService<RoleManager<IdentityRole>>();
+
+            string roleName = "User";
+
+            // if role doesn't exist, create it
+            if (await roleManager.FindByNameAsync(roleName) == null)
+            {
+                await roleManager.CreateAsync(new IdentityRole(roleName));
+            }
+
+            // if username doesn't exist, create it and add it to role
+            foreach (User user in users) {
+                if (await userManager.FindByNameAsync(user.UserName) == null)
+                {
+                    var result = await userManager.CreateAsync(user, user.Password);
+                    if (result.Succeeded)
+                    {
+                        await userManager.AddToRoleAsync(user, roleName);
+                    }
                 }
             }
         }
@@ -113,13 +149,6 @@ namespace SmartProductQuotationTool.DataAccess
                 new Inventory() { InventoryId = 59, Level = 7, Name = "MPS-822MP", Description = "", Price = 210.00, PVCode = "N", Qty = 1 },
                 new Inventory() { InventoryId = 60, Level = 7, Name = "BB-800", Description = "", Price = 45.00, PVCode = "N", Qty = 1 }
             );
-            
-            /*modelBuilder.Entity<User>().HasData(
-                new User() { UserName = "MTL-000001", PasswordHash = "Password1#", CompanyName = "Seneca College", PhoneNumber = "111-111-1111", Address1 = "1750 Finch Ave E", Address2 = "", City="North York", Province = "ON", Country = "Canada", PostalCode = "M2J 2X5", Website= "https://www.senecacollege.ca/home.html", Discount=66.00 },
-                new User() { UserName = "MTL-000002", PasswordHash = "Password2#", CompanyName = "Conestoga College", PhoneNumber = "222-222-2222", Address1 = "108 University Ave", Address2 = "", City = "Waterloo", Province = "ON", Country = "Canada", PostalCode = "N2J 2W2", Website = "https://www.conestogac.on.ca", Discount = 68.00 },
-                new User() { UserName = "MTL-000003", PasswordHash = "Password3#", CompanyName = "University of Waterloo", PhoneNumber = "333-333-3333", Address1 = "200 University Ave W", Address2 = "", City = "Waterloo", Province = "ON", Country = "Canada", PostalCode = "N2L 3G1", Website = "https://uwaterloo.ca", Discount = 70.00 },
-                new User() { UserName = "MTL-000004", PasswordHash = "Password4#", CompanyName = "University of Toronto", PhoneNumber = "444-444-4444", Address1 = "27 King's College Circle", Address2 = "", City = "Waterloo", Province = "ON", Country = "Canada", PostalCode = "M5S 1A1", Website = "https://www.utoronto.ca", Discount = 72.00 }
-            );*/
         }
     }
 }

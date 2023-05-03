@@ -22,11 +22,19 @@ namespace SmartProductQuotationTool.Controllers
 
         public IActionResult Index()
         {
+            string? username = HttpContext.User.Identity.Name;
+            var users = _userManager.Users.ToList();
+            double discountRate = 0.00;
+            if(users.Find(u => u.UserName == username) != null)
+            {
+                discountRate = (double) users.Find(u => u.UserName == username).DiscountRate;
+            }
+
+
             ListViewModel listViewModel = new ListViewModel()
             {
                 Inventories = _context.Inventories.ToList(),
-                DiscountRate = 0
-                    
+                DiscountRate = discountRate
             };
             return View(listViewModel);
         }

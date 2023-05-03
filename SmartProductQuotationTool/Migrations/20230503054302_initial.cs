@@ -29,6 +29,7 @@ namespace SmartProductQuotationTool.Migrations
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     CompanyName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Address1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Address2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -37,7 +38,7 @@ namespace SmartProductQuotationTool.Migrations
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PostalCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Website = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Discount = table.Column<double>(type: "float", nullable: true),
+                    DiscountRate = table.Column<double>(type: "float", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -206,17 +207,6 @@ namespace SmartProductQuotationTool.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "Address1", "Address2", "City", "CompanyName", "ConcurrencyStamp", "Country", "Discount", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "PostalCode", "Province", "SecurityStamp", "TwoFactorEnabled", "UserName", "Website" },
-                values: new object[,]
-                {
-                    { "145f595f-a120-4dba-9d72-71180cec2980", 0, "200 University Ave W", "", "Waterloo", "University of Waterloo", "9c34d9b2-59d0-4bb2-8a1a-91d38b9d956b", "Canada", 70.0, null, false, false, null, null, null, "Password3#", "333-333-3333", false, "N2L 3G1", "ON", "8757fd25-4b59-4583-a1a4-a6f95615a6a1", false, "MTL-000003", "https://uwaterloo.ca" },
-                    { "5e84e903-7586-426d-bc31-5b40090f8bd9", 0, "108 University Ave", "", "Waterloo", "Conestoga College", "2ca957e5-4eee-492c-860e-0e8d125002ad", "Canada", 68.0, null, false, false, null, null, null, "Password2#", "222-222-2222", false, "N2J 2W2", "ON", "ef93b27b-e069-4c5c-9d91-99e4358f33a0", false, "MTL-000002", "https://www.conestogac.on.ca" },
-                    { "b76d7579-f289-49e5-9420-ee1c7dff2556", 0, "1750 Finch Ave E", "", "North York", "Seneca College", "67843b75-6c0a-479d-a151-885c5a966f56", "Canada", 66.0, null, false, false, null, null, null, "Password1#", "111-111-1111", false, "M2J 2X5", "ON", "b3642e0d-d864-4376-b81f-fcb480eb97f3", false, "MTL-000001", "https://www.senecacollege.ca/home.html" },
-                    { "c4e70837-bb78-422a-97c2-2cafb592aca6", 0, "27 King's College Circle", "", "Waterloo", "University of Toronto", "3a03e17b-b24b-409b-9dfe-03ebecd8c229", "Canada", 72.0, null, false, false, null, null, null, "Password4#", "444-444-4444", false, "M5S 1A1", "ON", "e3ad84c4-cbe5-4074-93a3-47e360eff6db", false, "MTL-000004", "https://www.utoronto.ca" }
-                });
-
-            migrationBuilder.InsertData(
                 table: "Inventories",
                 columns: new[] { "InventoryId", "CartId", "Description", "Level", "Name", "PVCode", "Price", "Qty" },
                 values: new object[,]
@@ -258,7 +248,11 @@ namespace SmartProductQuotationTool.Migrations
                     { 35, null, "", 5, "BB-1008DB", "C", 1590.0, 1 },
                     { 36, null, "", 5, "BB-1012DR", "C", 1770.0, 1 },
                     { 37, null, "", 5, "BB-1012D", "C", 1770.0, 1 },
-                    { 38, null, "", 5, "BB-1012DB", "C", 1770.0, 1 }
+                    { 38, null, "", 5, "BB-1012DB", "C", 1770.0, 1 },
+                    { 39, null, "", 6, "MIX-4010", "A", 130.0, 1 },
+                    { 40, null, "", 6, "MIX-4010-ISO", "A", 140.0, 1 },
+                    { 41, null, "", 6, "MIX-4020", "A", 160.0, 1 },
+                    { 42, null, "", 6, "MIX-4020-ISO", "B", 170.0, 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -266,10 +260,6 @@ namespace SmartProductQuotationTool.Migrations
                 columns: new[] { "InventoryId", "CartId", "Description", "Level", "Name", "PVCode", "Price", "Qty" },
                 values: new object[,]
                 {
-                    { 39, null, "", 6, "MIX-4010", "A", 130.0, 1 },
-                    { 40, null, "", 6, "MIX-4010-ISO", "A", 140.0, 1 },
-                    { 41, null, "", 6, "MIX-4020", "A", 160.0, 1 },
-                    { 42, null, "", 6, "MIX-4020-ISO", "B", 170.0, 1 },
                     { 43, null, "", 6, "MIX-4030", "A", 110.0, 1 },
                     { 44, null, "", 6, "MIX-4030-ISO", "A", 120.0, 1 },
                     { 45, null, "", 6, "MIX-4001", "A", 28.0, 1 },

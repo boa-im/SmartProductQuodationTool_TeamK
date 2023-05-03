@@ -838,7 +838,7 @@ namespace SmartProductQuotationTool.Migrations
                     b.Property<string>("Country")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double?>("Discount")
+                    b.Property<double?>("DiscountRate")
                         .HasColumnType("float");
 
                     b.Property<string>("Email")
@@ -861,6 +861,9 @@ namespace SmartProductQuotationTool.Migrations
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
@@ -901,100 +904,6 @@ namespace SmartProductQuotationTool.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "b76d7579-f289-49e5-9420-ee1c7dff2556",
-                            AccessFailedCount = 0,
-                            Address1 = "1750 Finch Ave E",
-                            Address2 = "",
-                            City = "North York",
-                            CompanyName = "Seneca College",
-                            ConcurrencyStamp = "67843b75-6c0a-479d-a151-885c5a966f56",
-                            Country = "Canada",
-                            Discount = 66.0,
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            PasswordHash = "Password1#",
-                            PhoneNumber = "111-111-1111",
-                            PhoneNumberConfirmed = false,
-                            PostalCode = "M2J 2X5",
-                            Province = "ON",
-                            SecurityStamp = "b3642e0d-d864-4376-b81f-fcb480eb97f3",
-                            TwoFactorEnabled = false,
-                            UserName = "MTL-000001",
-                            Website = "https://www.senecacollege.ca/home.html"
-                        },
-                        new
-                        {
-                            Id = "5e84e903-7586-426d-bc31-5b40090f8bd9",
-                            AccessFailedCount = 0,
-                            Address1 = "108 University Ave",
-                            Address2 = "",
-                            City = "Waterloo",
-                            CompanyName = "Conestoga College",
-                            ConcurrencyStamp = "2ca957e5-4eee-492c-860e-0e8d125002ad",
-                            Country = "Canada",
-                            Discount = 68.0,
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            PasswordHash = "Password2#",
-                            PhoneNumber = "222-222-2222",
-                            PhoneNumberConfirmed = false,
-                            PostalCode = "N2J 2W2",
-                            Province = "ON",
-                            SecurityStamp = "ef93b27b-e069-4c5c-9d91-99e4358f33a0",
-                            TwoFactorEnabled = false,
-                            UserName = "MTL-000002",
-                            Website = "https://www.conestogac.on.ca"
-                        },
-                        new
-                        {
-                            Id = "145f595f-a120-4dba-9d72-71180cec2980",
-                            AccessFailedCount = 0,
-                            Address1 = "200 University Ave W",
-                            Address2 = "",
-                            City = "Waterloo",
-                            CompanyName = "University of Waterloo",
-                            ConcurrencyStamp = "9c34d9b2-59d0-4bb2-8a1a-91d38b9d956b",
-                            Country = "Canada",
-                            Discount = 70.0,
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            PasswordHash = "Password3#",
-                            PhoneNumber = "333-333-3333",
-                            PhoneNumberConfirmed = false,
-                            PostalCode = "N2L 3G1",
-                            Province = "ON",
-                            SecurityStamp = "8757fd25-4b59-4583-a1a4-a6f95615a6a1",
-                            TwoFactorEnabled = false,
-                            UserName = "MTL-000003",
-                            Website = "https://uwaterloo.ca"
-                        },
-                        new
-                        {
-                            Id = "c4e70837-bb78-422a-97c2-2cafb592aca6",
-                            AccessFailedCount = 0,
-                            Address1 = "27 King's College Circle",
-                            Address2 = "",
-                            City = "Waterloo",
-                            CompanyName = "University of Toronto",
-                            ConcurrencyStamp = "3a03e17b-b24b-409b-9dfe-03ebecd8c229",
-                            Country = "Canada",
-                            Discount = 72.0,
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            PasswordHash = "Password4#",
-                            PhoneNumber = "444-444-4444",
-                            PhoneNumberConfirmed = false,
-                            PostalCode = "M5S 1A1",
-                            Province = "ON",
-                            SecurityStamp = "e3ad84c4-cbe5-4074-93a3-47e360eff6db",
-                            TwoFactorEnabled = false,
-                            UserName = "MTL-000004",
-                            Website = "https://www.utoronto.ca"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

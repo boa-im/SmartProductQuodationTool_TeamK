@@ -45,6 +45,7 @@ var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
 using (var scope = scopeFactory.CreateScope())
 {
     await SPQTDbContext.CreateAdminUser(scope.ServiceProvider);
+    await SPQTDbContext.CreateUsers(scope.ServiceProvider);
 }
 
 app.Run();
