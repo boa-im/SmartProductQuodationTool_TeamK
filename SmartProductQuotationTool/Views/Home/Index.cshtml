@@ -39,7 +39,14 @@
                     <td>@item.PVCode</td>
                     <td>$@item.Price.ToString("#,##0.00")</td>
                     <td>$@((item.Price * (1 - (Model.DiscountRate * 0.01))).ToString("#,##0.00"))</td>
-                    <td><a asp-controller="Cart" asp-action="AddtoCart" asp-route-id="@item.InventoryId">Add to cart</a></td>
+                    @if (item.Qty != 0)
+                    {
+                        <td><a class="btn btn-primary" asp-controller="Cart" asp-action="AddtoCart" asp-route-id="@item.InventoryId">Add to cart</a></td>
+                    }
+                    else
+                    {
+                        <td><button class="btn btn-primary" disabled>Out of Order</button></td>
+                    }
                 </tr>
             }
         </tbody>

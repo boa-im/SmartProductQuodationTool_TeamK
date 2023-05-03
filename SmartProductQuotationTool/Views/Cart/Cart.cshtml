@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Cart Page";
+    int qty = 0;
 }
 
 <div class="text-center">
@@ -19,6 +20,7 @@
         <tbody>
             @foreach (var item in Model.Carts)
             {
+                qty += Model.Qty[item.Name];
                 <tr>
                     <td>@Model.Qty[item.Name]</td>
                     <td>@item.Name</td>
@@ -27,7 +29,12 @@
                     <td>$@((item.Price * (1 - (Model.currentUser.DiscountRate * 0.01))).ToString("#,##0.00"))</td>
                     <td><a class="btn btn-primary" asp-controller="Cart" asp-action="Delete" asp-route-id="@item.InventoryId">Delete</a></td>
                 </tr>
+                
             }
         </tbody>
     </table>
 </div>
+
+@{
+    ViewData["Qty"] = qty;
+}

@@ -1,9 +1,4 @@
 ﻿@{
-    //var cart = new Cart(Context);
-    //var count = cart.Count;
-
-
-
     var current = ViewContext.RouteData.Values["area"]?.ToString() ?? ViewContext.RouteData.Values["controller"]?.ToString();
 }
 
@@ -39,7 +34,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Cart" asp-action="GetAllCart">
                                 <span class="fas fa-shopping-cart"></span>&nbsp;Cart
-                                @*<span class="badge bg-secondary">5</span>*@
+                                <span class="badge bg-secondary">@ViewData["Qty"]</span>
                             </a>
                         </li>
                     </ul>
