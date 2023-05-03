@@ -81,7 +81,7 @@ namespace SmartProductQuotationTool.Controllers
             User currentUser = users.Find(u => u.UserName == username);
 
             //이부분이랑
-            List<Inventory> currentInventory = _context.Inventories.Where(m => m.InventoryId == id).ToList();
+            /*List<Inventory> currentInventory = _context.Inventories.Where(m => m.InventoryId == id).ToList();
 
             foreach (var item in currentInventory)
             {
@@ -91,9 +91,20 @@ namespace SmartProductQuotationTool.Controllers
                 item.Qty++;
                 _context.Inventories.Update(item);
                 _context.SaveChanges();
-            }
+            }*/
 
-            var cartList = _context.Carts.Where(m => m.User.Id == currentUser.Id).ToList();
+            List<Cart> cartItems = _context.Carts.Where(c => c.User.Id == currentUser.Id && c.InventoryId == id).ToList();
+            Inventory currentInventory = _context.Inventories.Where(c => c.InventoryId == id).FirstOrDefault();
+
+            currentInventory.Qty += cartItems.Count();
+            _context.Inventories.Update(currentInventory);
+            foreach (var item in cartItems)
+            {
+                _context.Carts.Remove(item);
+            }
+            _context.SaveChanges();
+
+            /*List<Cart> cartList = _context.Carts.Where(m => m.User.Id == currentUser.Id).ToList();
             List<Inventory> findInventory = new List<Inventory>();
             var Qty = new Dictionary<string, int>();
 
@@ -124,7 +135,7 @@ namespace SmartProductQuotationTool.Controllers
                 Carts = findInventory,
                 currentUser = currentUser,
                 Qty = Qty
-            };
+            };*/
 
             return RedirectToAction("GetAllCart", "Cart"); 
         }

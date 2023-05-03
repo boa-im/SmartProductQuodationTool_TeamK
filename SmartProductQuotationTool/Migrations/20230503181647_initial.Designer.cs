@@ -12,7 +12,7 @@ using SmartProductQuotationTool.DataAccess;
 namespace SmartProductQuotationTool.Migrations
 {
     [DbContext(typeof(SPQTDbContext))]
-    [Migration("20230503144442_initial")]
+    [Migration("20230503181647_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
