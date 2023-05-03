@@ -163,10 +163,15 @@ namespace SmartProductQuotationTool.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CartId"), 1L, 1);
 
+                    b.Property<int>("InventoryId")
+                        .HasColumnType("int");
+
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("CartId");
+
+                    b.HasIndex("InventoryId");
 
                     b.HasIndex("UserId");
 
@@ -180,9 +185,6 @@ namespace SmartProductQuotationTool.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InventoryId"), 1L, 1);
-
-                    b.Property<int?>("CartId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -203,8 +205,6 @@ namespace SmartProductQuotationTool.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("InventoryId");
-
-                    b.HasIndex("CartId");
 
                     b.ToTable("Inventories");
 
@@ -838,7 +838,7 @@ namespace SmartProductQuotationTool.Migrations
                     b.Property<string>("Country")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double?>("DiscountRate")
+                    b.Property<double>("DiscountRate")
                         .HasColumnType("float");
 
                     b.Property<string>("Email")
@@ -959,23 +959,19 @@ namespace SmartProductQuotationTool.Migrations
 
             modelBuilder.Entity("SmartProductQuotationTool.Entities.Cart", b =>
                 {
+                    b.HasOne("SmartProductQuotationTool.Entities.Inventory", "Inventory")
+                        .WithMany()
+                        .HasForeignKey("InventoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("SmartProductQuotationTool.Entities.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
 
+                    b.Navigation("Inventory");
+
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("SmartProductQuotationTool.Entities.Inventory", b =>
-                {
-                    b.HasOne("SmartProductQuotationTool.Entities.Cart", null)
-                        .WithMany("Inventories")
-                        .HasForeignKey("CartId");
-                });
-
-            modelBuilder.Entity("SmartProductQuotationTool.Entities.Cart", b =>
-                {
-                    b.Navigation("Inventories");
                 });
 #pragma warning restore 612, 618
         }

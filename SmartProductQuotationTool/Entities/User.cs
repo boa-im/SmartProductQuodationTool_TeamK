@@ -14,6 +14,6 @@ namespace SmartProductQuotationTool.Entities
         public string? Country { get; set; }
         public string? PostalCode { get; set; }
         public string? Website { get; set; }
-        public double? DiscountRate { get; set; }
+        public double DiscountRate { get; set; }
     }
 }
