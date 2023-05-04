@@ -12,7 +12,7 @@ using SmartProductQuotationTool.DataAccess;
 namespace SmartProductQuotationTool.Migrations
 {
     [DbContext(typeof(SPQTDbContext))]
-    [Migration("20230503181647_initial")]
+    [Migration("20230504211407_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -214,7 +214,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 1,
-                            Description = "",
+                            Description = "Intelligent Fire Alarm Control Unit c/w 1 Intelligent Loop compatible with MGC Devices 4000 Series only)\r\n       Expandable to three SLCs with the addition of the Dual Loop Controller ALC-480.\r\n       1  20 Character  by 4 Line  Back-Lit LCD Display\r\n       4  Class A/B (Style Z/Y) NAC Circuits\r\n       Four Event Display Queues\r\n       c/w UB-1024DS Universal Backbox & DOX-1024DSR RED Door\r\n       Space for 2 RAX-1048TZDS LED Annunciator Modules\r\n* Standard RED Door",
                             Level = 1,
                             Name = "FX-401R",
                             PVCode = "B",
@@ -224,7 +224,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 2,
-                            Description = "",
+                            Description = "Intelligent Fire Alarm Control Unit c/w 1 Intelligent Loop compatible with MGC Devices 4000 Series only)\r\n       Expandable to three SLCs with the addition of the Dual Loop Controller ALC-480.\r\n       1  20 Character  by 4 Line  Back-Lit LCD Display\r\n       4  Class A/B (Style Z/Y) NAC Circuits\r\n       Four Event Display Queues\r\n       c/w UB-1024DS Universal Backbox & DOX-1024DSR RED Door\r\n       Space for 2 RAX-1048TZDS LED Annunciator Modules\r\n* Standard BLACK Door",
                             Level = 1,
                             Name = "FX-401B",
                             PVCode = "B",
@@ -234,7 +234,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 3,
-                            Description = "",
+                            Description = "Remote LCD Annunciator, MIMIC Display for FX-400, FX-401, FX-3318, FX-3500 c/w Large 4 x 20 Character Back-Lit LCD Display, Four Event Display Queues. Common Controls, Mounts in BB-1000 Series Enclosure",
                             Level = 2,
                             Name = "RAX-LCD-LITE",
                             PVCode = "B",
@@ -244,7 +244,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 4,
-                            Description = "",
+                            Description = "Main Annunciator Chassis  c/w 32 Bi-colored LEDs, 32 Zoned Trouble LEDs\r\nCommon Indicators --\r\nAC On, Common Trouble, Auxiliary Disconnect,\r\n2 Stage Acknowledge & General Alarm Activate (if Config.)\r\nCommon Controls --\r\nReset, Lamp Test,  Fire Drill, Auxiliary Disconnect, \r\nLocal Buzzer & Signal Silence. Mounts in BB-1000 Series Enclosure",
                             Level = 2,
                             Name = "RAM-1032TZDS",
                             PVCode = "A",
@@ -254,7 +254,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 5,
-                            Description = "",
+                            Description = "Main Annunciator Chassis  c/w 32 Bi-colored LEDs, 32 Zoned Trouble LEDs\r\nCommon Indicators -- AC On, Common Trouble, Auxiliary Disconnect,\r\n2 Stage Acknowledge & General Alarm Activate (if Config.)\r\nCommon Controls -- Reset, Lamp Test,  Fire Drill, Auxiliary Disconnect, \r\nLocal Buzzer & Signal Silence\r\nMounts in BB-1000 Series enclosure or BB-5008 or BB-5014",
                             Level = 2,
                             Name = "RAM-1032TZDS-CC",
                             PVCode = "B",
@@ -264,7 +264,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 6,
-                            Description = "",
+                            Description = "Adder Annunciator Chassis c/w 48 Bi-Coloured LEDs; 48 Zoned Trouble LED's\r\nMounts in BB-1000 Series enclosure",
                             Level = 2,
                             Name = "RAX-1048TZDS",
                             PVCode = "A",
@@ -274,7 +274,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 7,
-                            Description = "",
+                            Description = "Conformal Coated Adder Annunciator Chassis c/w 48 Bi-Coloured LEDs; 48 Zoned Trouble LED's. Mounts in BB-1000 or BB-5000 Series Enclosure.",
                             Level = 2,
                             Name = "RAX-1048TZDS-CC",
                             PVCode = "B",
@@ -284,7 +284,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 8,
-                            Description = "",
+                            Description = "Interface for Configuring FleXNet™, FA-300 Series, FX-2000 Series, FX-401, FX-3500, QX-5000, UDACT-300, and MR-2300 Series",
                             Level = 3,
                             Name = "UIMA4",
                             PVCode = "A",
@@ -294,7 +294,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 9,
-                            Description = "",
+                            Description = "Fire Panel Configuration Kit4 With UIMA4",
                             Level = 3,
                             Name = "MGC-CONFIG-KIT4",
                             PVCode = "B",
@@ -304,7 +304,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 10,
-                            Description = "",
+                            Description = "FX-401 Dual Loop Controller Module 480 points (MGC Devices 4000 Series Compatible)",
                             Level = 4,
                             Name = "ALC-480",
                             PVCode = "B",
@@ -314,7 +314,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 11,
-                            Description = "",
+                            Description = "Polarity Reversal & City Tie c/w Alarm, Supervisory & Trouble Transmit Capabilities",
                             Level = 4,
                             Name = "PR-300",
                             PVCode = "B",
@@ -324,7 +324,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 12,
-                            Description = "",
+                            Description = "Adder Graphic Driver Board, c/w 48 Supervised Outputs, Output Connections via Terminals or Ribbon Cable\r\nMounts in Graphic Wall box",
                             Level = 4,
                             Name = "AGD-048",
                             PVCode = "B",
@@ -334,7 +334,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 13,
-                            Description = "",
+                            Description = "Master Graphic Driver Board c/w, Fire Alarm Common Control Switch Inputs & LED Outputs\r\n32 Supervised Outputs, Output Connections via Terminals or Ribbon Cable\r\nMounts in Graphic Wall box",
                             Level = 4,
                             Name = "MGD-32",
                             PVCode = "B",
@@ -344,7 +344,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 14,
-                            Description = "",
+                            Description = "Power Supply Interface Board",
                             Level = 4,
                             Name = "PCS-100",
                             PVCode = "B",
@@ -354,7 +354,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 15,
-                            Description = "",
+                            Description = "Solenoid End of Line Resistor 47K, White Plate",
                             Level = 4,
                             Name = "MP-3500W",
                             PVCode = "B",
@@ -364,7 +364,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 16,
-                            Description = "",
+                            Description = "SMART Relay Module with Enclosure (12) RED",
                             Level = 4,
                             Name = "SRM-312R",
                             PVCode = "C",
@@ -374,7 +374,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 17,
-                            Description = "",
+                            Description = "Semi-Flush Backbox for Series 1000 Annunciators (Houses 1 Module)\r\nRED Door & Black Backbox (12.75\"W X 9\"L X 1.85\"D without door)\r\nMounts over standard electrical box by others",
                             Level = 5,
                             Name = "BB-1001DR",
                             PVCode = "B",
@@ -384,7 +384,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 18,
-                            Description = "",
+                            Description = "Semi-Flush Backbox for Series 1000 Annunciators (Houses 1 Module)\r\nWHITE Door & Black Backbox (12.75\"W X 9\"L X 1.85\"D without door)\r\nMounts over standard electrical box by others",
                             Level = 5,
                             Name = "BB-1001D",
                             PVCode = "A",
@@ -394,7 +394,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 19,
-                            Description = "",
+                            Description = "Semi-Flush Backbox for Series 1000 Annunciators (Houses 1 Module)\r\nBLACK Door & Black Backbox (12.75\"W X 9\"L X 1.85\"D without door)\r\nMounts over standard electrical box by others",
                             Level = 5,
                             Name = "BB-1001DB",
                             PVCode = "B",
@@ -404,7 +404,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 20,
-                            Description = "",
+                            Description = "NEW Semi-Flush Backbox for Series 1000 Annunciators (Houses 1 Module)\r\nStainless Steel Finish\r\nMounts over standard electrical box by others",
                             Level = 5,
                             Name = "BB-1001DS",
                             PVCode = "C",
@@ -414,7 +414,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 21,
-                            Description = "",
+                            Description = "Weather Protected Backbox for Series 1000 Annunciators (Houses 1 Module)\r\n   Dimensions: (11-11/32\" Height, 13\" Width, 3.5\" Depth)\r\n   Rated for Outdoor Environment: +50°C to -40°C - 95% R.H. @60°C\r\n   Lexan sealed window, to protect against the challenges of an outdoor application\r\n   Surface mount application. RED Door.\r\n   NOTE: there is no need for thermostat or heater.  RAM-1032TZDS-CC must be ordered separately to match UL, ULC installation requirements",
                             Level = 5,
                             Name = "BB-1001WPRA",
                             PVCode = "B",
@@ -424,7 +424,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 22,
-                            Description = "",
+                            Description = "Weather Protected Backbox for Series 1000 Annunciators (Houses 1 Module)\r\n   Dimensions: (11-11/32\" Height, 13\" Width, 3.5\" Depth)\r\n   Rated for Outdoor Environment: +50°C to -40°C - 95% R.H. @60°C\r\n   Lexan sealed window, to protect against the challenges of an outdoor application\r\n   Surface mount application. WHITE Door.\r\n   NOTE: there is no need for thermostat or heater.  RAM-1032TZDS-CC must be ordered separately to match UL, ULC installation requirements",
                             Level = 5,
                             Name = "BB-1001WPA",
                             PVCode = "B",
@@ -434,7 +434,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 23,
-                            Description = "",
+                            Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 2 Modules) \r\nRED Door & Black Backbox (18”H x 12.75”W x 1.85”D)\r\nMounts over standard electrical box by others",
                             Level = 5,
                             Name = "BB-1002DR",
                             PVCode = "B",
@@ -444,7 +444,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 24,
-                            Description = "",
+                            Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 2 Modules) \r\nWHITE Door & Black Backbox (18”H x 12.75”W x 1.85”D)\r\nMounts over standard electrical box by others",
                             Level = 5,
                             Name = "BB-1002D",
                             PVCode = "B",
@@ -454,7 +454,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 25,
-                            Description = "",
+                            Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 2 Modules) \r\nBLACK Door & Black Backbox (18”H x 12.75”W x 1.85”D)\r\nMounts over standard electrical box by others",
                             Level = 5,
                             Name = "BB-1002DB",
                             PVCode = "B",
@@ -464,7 +464,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 26,
-                            Description = "",
+                            Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 2 Modules) \r\nStainless Steel Finish (18”H x 12.75”W x 1.85”D)\r\nMounts over standard electrical box by others",
                             Level = 5,
                             Name = "BB-1002DS",
                             PVCode = "C",
@@ -474,7 +474,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 27,
-                            Description = "",
+                            Description = "Weather Protected Backbox for Series 1000 Annunciators (Houses 2 Module)\r\n   Dimensions: (11-11/32\" Height, 13\" Width, 3.5\" Depth)\r\n   Rated for Outdoor Environment: +50°C to -40°C - 95% R.H. @60°C\r\n   Lexan sealed window, to protect against the challenges of an outdoor application\r\n   Surface mount application. RED Door.\r\n   NOTE: there is no need for thermostat or heater. RAM-1032TZDS-CC and RAX-1048TZDS-CC must be ordered separately to match UL, ULC installation requirements.",
                             Level = 5,
                             Name = "BB-1002WPRA",
                             PVCode = "B",
@@ -484,7 +484,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 28,
-                            Description = "",
+                            Description = "Weather Protected Backbox for Series 1000 Annunciators (Houses 2 Module)\r\n   Dimensions: (11-11/32\" Height, 13\" Width, 3.5\" Depth)\r\n   Rated for Outdoor Environment: +50°C to -40°C - 95% R.H. @60°C\r\n   Lexan sealed window, to protect against the challenges of an outdoor application\r\n   Surface mount application. WHITE Door.\r\n   NOTE: there is no need for thermostat or heater. RAM-1032TZDS-CC and RAX-1048TZDS-CC must be ordered separately to match UL, ULC installation requirements.",
                             Level = 5,
                             Name = "BB-1002WPA",
                             PVCode = "C",
@@ -494,7 +494,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 29,
-                            Description = "",
+                            Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 3 Modules)\r\nRED Door & Black Backbox (12.75\"W X 26.4\"L X 1.85\"D) without door\r\nMounts over standard electrical box by others",
                             Level = 5,
                             Name = "BB-1003DR",
                             PVCode = "C",
@@ -504,7 +504,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 30,
-                            Description = "",
+                            Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 3 Modules)\r\nWHITE Door & Black Backbox (12.75\"W X 26.4\"L X 1.85\"D) without door\r\nMounts over standard electrical box by others",
                             Level = 5,
                             Name = "BB-1003D",
                             PVCode = "B",
@@ -514,7 +514,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 31,
-                            Description = "",
+                            Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 3 Modules)\r\nBLACK Door & Black Backbox (12.75\"W X 26.4\"L X 1.85\"D) without door\r\nMounts over standard electrical box by others",
                             Level = 5,
                             Name = "BB-1003DB",
                             PVCode = "C",
@@ -524,7 +524,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 32,
-                            Description = "",
+                            Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 3 Modules)\r\nStainless Steel Finish (12.75\"W X 26.4\"L X 1.85\"D) without door\r\nMounts over standard electrical box by others",
                             Level = 5,
                             Name = "BB-1003DS",
                             PVCode = "C",
@@ -534,7 +534,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 33,
-                            Description = "",
+                            Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 8 Modules)\r\nRED  Door & Black Backbox (33”H x 22.5”W x 1.85”D)\r\nMounts over standard electrical box by others",
                             Level = 5,
                             Name = "BB-1008DR",
                             PVCode = "C",
@@ -544,7 +544,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 34,
-                            Description = "",
+                            Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 8 Modules)\r\nWHITE  Door & Black Backbox (33”H x 22.5”W x 1.85”D)\r\nMounts over standard electrical box by others",
                             Level = 5,
                             Name = "BB-1008D",
                             PVCode = "B",
@@ -554,7 +554,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 35,
-                            Description = "",
+                            Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 8 Modules)\r\nBLACK Door & Black Backbox (33”H x 22.5”W x 1.85”D)\r\nMounts over standard electrical box by others",
                             Level = 5,
                             Name = "BB-1008DB",
                             PVCode = "C",
@@ -564,7 +564,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 36,
-                            Description = "",
+                            Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 12 Modules)\r\nRED Door & Black Backbox (45”H x 22.5”W x 1.85”D)\r\nMounts Over Standard Electrical Box by Others",
                             Level = 5,
                             Name = "BB-1012DR",
                             PVCode = "C",
@@ -574,7 +574,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 37,
-                            Description = "",
+                            Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 12 Modules)\r\nWHITE Door & Black Backbox (45”H x 22.5”W x 1.85”D)\r\nMounts Over Standard Electrical Box by Others",
                             Level = 5,
                             Name = "BB-1012D",
                             PVCode = "C",
@@ -584,7 +584,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 38,
-                            Description = "",
+                            Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 12 Modules)\r\nBLACK Door & Black Backbox (45”H x 22.5”W x 1.85”D)\r\nMounts Over Standard Electrical Box by Others",
                             Level = 5,
                             Name = "BB-1012DB",
                             PVCode = "C",
@@ -594,7 +594,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 39,
-                            Description = "",
+                            Description = "4000 Series Photoelectric Detector W/O Isolation",
                             Level = 6,
                             Name = "MIX-4010",
                             PVCode = "A",
@@ -604,7 +604,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 40,
-                            Description = "",
+                            Description = "4000 Series Photoelectric Detector with Isolation",
                             Level = 6,
                             Name = "MIX-4010-ISO",
                             PVCode = "A",
@@ -614,7 +614,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 41,
-                            Description = "",
+                            Description = "4000 Series Multi Sensor - Photoelectric heat W/O Isolation",
                             Level = 6,
                             Name = "MIX-4020",
                             PVCode = "A",
@@ -624,7 +624,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 42,
-                            Description = "",
+                            Description = "4000 Series Multi Sensor - Photoelectric heat with Isolation",
                             Level = 6,
                             Name = "MIX-4020-ISO",
                             PVCode = "B",
@@ -634,7 +634,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 43,
-                            Description = "",
+                            Description = "4000 Series Tri-Mode Heat Detector W/O Isolation",
                             Level = 6,
                             Name = "MIX-4030",
                             PVCode = "A",
@@ -644,7 +644,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 44,
-                            Description = "",
+                            Description = "4000 Series Tri-Mode Heat Detector with Isolation",
                             Level = 6,
                             Name = "MIX-4030-ISO",
                             PVCode = "A",
@@ -654,7 +654,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 45,
-                            Description = "",
+                            Description = "4000 Series 6\" Detector Base",
                             Level = 6,
                             Name = "MIX-4001",
                             PVCode = "A",
@@ -664,7 +664,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 46,
-                            Description = "",
+                            Description = "4000 Series 4\" Detector Base",
                             Level = 6,
                             Name = "MIX-4002",
                             PVCode = "A",
@@ -674,7 +674,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 47,
-                            Description = "",
+                            Description = "4000 Series Relay Base",
                             Level = 6,
                             Name = "MIX-4003-R",
                             PVCode = "B",
@@ -684,7 +684,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 48,
-                            Description = "",
+                            Description = "4000 Series Sounder Base",
                             Level = 6,
                             Name = "MIX-4003-S",
                             PVCode = "B",
@@ -694,7 +694,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 49,
-                            Description = "",
+                            Description = "4000 Series Addressable Device Programmer",
                             Level = 6,
                             Name = "MIX-4090",
                             PVCode = "A",
@@ -704,7 +704,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 50,
-                            Description = "",
+                            Description = "4000 Series Dual Input Module",
                             Level = 6,
                             Name = "MIX-4040",
                             PVCode = "A",
@@ -714,7 +714,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 51,
-                            Description = "",
+                            Description = "4000 Series Mini Dual Input Module",
                             Level = 6,
                             Name = "MIX-4041",
                             PVCode = "A",
@@ -724,7 +724,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 52,
-                            Description = "",
+                            Description = "4000 Series Conventional Zone Module",
                             Level = 6,
                             Name = "MIX-4042",
                             PVCode = "B",
@@ -734,7 +734,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 53,
-                            Description = "",
+                            Description = "4000 Series Dual Relay Module",
                             Level = 6,
                             Name = "MIX-4045",
                             PVCode = "A",
@@ -744,7 +744,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 54,
-                            Description = "",
+                            Description = "4000 Series Supervised Output Module",
                             Level = 6,
                             Name = "MIX-4046",
                             PVCode = "A",
@@ -754,7 +754,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 55,
-                            Description = "",
+                            Description = "Sync Module",
                             Level = 6,
                             Name = "MIX-4050",
                             PVCode = "A",
@@ -764,7 +764,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 56,
-                            Description = "",
+                            Description = "4000 Series Isolator Module",
                             Level = 6,
                             Name = "MIX-4070",
                             PVCode = "A",
@@ -774,7 +774,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 57,
-                            Description = "",
+                            Description = "MP 1 STAGE ADDR DOUBLE ACTION PULL STATION ULC",
                             Level = 7,
                             Name = "MPS-810MP",
                             PVCode = "N",
@@ -784,7 +784,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 58,
-                            Description = "",
+                            Description = "MP 2 STAGE ADDRESSABLE PULL STATION ULC",
                             Level = 7,
                             Name = "MPS-802MP",
                             PVCode = "N",
@@ -794,7 +794,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 59,
-                            Description = "",
+                            Description = "MP MAGLOCK 2 STAGE ADDR DOUBLE ACTION PULL STATION ULC",
                             Level = 7,
                             Name = "MPS-822MP",
                             PVCode = "N",
@@ -804,7 +804,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 60,
-                            Description = "",
+                            Description = "Surface Backbox For 800 Series Manual Station",
                             Level = 7,
                             Name = "BB-800",
                             PVCode = "N",
