@@ -60,16 +60,7 @@ namespace SmartProductQuotationTool.Controllers
                 }
             }
 
-            findInventory = findInventory.Distinct().ToList();
-
-            CartViewModel cartViewModel = new CartViewModel
-            {
-                Carts = findInventory,
-                currentUser = currentUser,
-                Qty = Qty
-            };
-
-            return View("Cart", cartViewModel);
+            return GetAllCart();
         }
 
         [HttpGet("/cart/delete")]
@@ -105,9 +96,12 @@ namespace SmartProductQuotationTool.Controllers
             List<Inventory> findInventory = new List<Inventory>();
             var Qty = new Dictionary<string, int>();
 
+            int maxLevel = 0;
+
             foreach (var list in cartList)
             {
                 Inventory item = _context.Inventories.Where(m => m.InventoryId == list.InventoryId).FirstOrDefault();
+                maxLevel = item.Level > maxLevel ? item.Level : maxLevel;
                 findInventory.Add(item);
             }
 
@@ -131,7 +125,8 @@ namespace SmartProductQuotationTool.Controllers
             {
                 Carts = findInventory,
                 currentUser = currentUser,
-                Qty = Qty
+                Qty = Qty,
+                RecommendedProduct = maxLevel < 7 ? _context.Inventories.Where(i => i.Level == maxLevel + 1).FirstOrDefault() : _context.Inventories.Where(i => i.Level == maxLevel).FirstOrDefault()
             };
 
             return View("Cart", cartViewModel);

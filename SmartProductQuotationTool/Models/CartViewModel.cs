@@ -7,5 +7,6 @@ namespace SmartProductQuotationTool.Models
         public List<Inventory>? Carts { get; set; }
         public User currentUser { get; set; }
         public Dictionary<string, int> Qty { get; set; }
+        public Inventory RecommendedProduct { get; set; }
     }
 }
