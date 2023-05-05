@@ -35,7 +35,21 @@
             {
                 <tr>
                     <td>@item.Name</td>
-                    <td class="w-50">@item.Description</td>
+                    <td class="w-50 text-start">
+                        @foreach (var line in item.Description.Split("\r\n"))
+                        {
+                            @if (line.IndexOf('\t') != -1)
+                            {
+                                <span>&emsp;-</span>
+                                @line
+                            }
+                            else
+                            {
+                                @line
+                            }
+                            <br />
+                        }
+                    </td>
                     <td>@item.PVCode</td>
                     <td>$@item.Price.ToString("#,##0.00")</td>
                     <td>$@((item.Price * (1 - (Model.DiscountRate * 0.01))).ToString("#,##0.00"))</td>

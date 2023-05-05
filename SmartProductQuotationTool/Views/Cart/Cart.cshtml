@@ -24,7 +24,21 @@
                 <tr>
                     <td>@Model.Qty[item.Name]</td>
                     <td>@item.Name</td>
-                    <td class="w-75">@item.Description</td>
+                    <td class="w-75">
+                        @foreach (var line in item.Description.Split("\r\n"))
+                        {
+                            @if (line.IndexOf('\t') != -1)
+                            {
+                                <span>&emsp;-</span>
+                                @line
+                            }
+                            else
+                            {
+                                @line
+                            }
+                            <br />
+                        }
+                    </td>
                     <td>$@item.Price.ToString("#,##0.00")</td>
                     <td>$@((item.Price * (1 - (Model.currentUser.DiscountRate * 0.01))).ToString("#,##0.00"))</td>
                     <td><a class="btn btn-primary" asp-controller="Cart" asp-action="Delete" asp-route-id="@item.InventoryId">Delete</a></td>

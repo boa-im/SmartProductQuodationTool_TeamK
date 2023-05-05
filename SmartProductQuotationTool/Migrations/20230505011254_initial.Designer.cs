@@ -12,7 +12,7 @@ using SmartProductQuotationTool.DataAccess;
 namespace SmartProductQuotationTool.Migrations
 {
     [DbContext(typeof(SPQTDbContext))]
-    [Migration("20230504211407_initial")]
+    [Migration("20230505011254_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -214,7 +214,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 1,
-                            Description = "Intelligent Fire Alarm Control Unit c/w 1 Intelligent Loop compatible with MGC Devices 4000 Series only)\r\n       Expandable to three SLCs with the addition of the Dual Loop Controller ALC-480.\r\n       1  20 Character  by 4 Line  Back-Lit LCD Display\r\n       4  Class A/B (Style Z/Y) NAC Circuits\r\n       Four Event Display Queues\r\n       c/w UB-1024DS Universal Backbox & DOX-1024DSR RED Door\r\n       Space for 2 RAX-1048TZDS LED Annunciator Modules\r\n* Standard RED Door",
+                            Description = "Intelligent Fire Alarm Control Unit c/w 1 Intelligent Loop compatible with MGC Devices 4000 Series only)\r\n 	Expandable to three SLCs with the addition of the Dual Loop Controller ALC-480.\r\n 	1  20 Character  by 4 Line  Back-Lit LCD Display\r\n 	4  Class A/B (Style Z/Y) NAC Circuits\r\n 	Four Event Display Queues\r\n 	c/w UB-1024DS Universal Backbox & DOX-1024DSR RED Door\r\n 	Space for 2 RAX-1048TZDS LED Annunciator Modules\r\n* Standard RED Door",
                             Level = 1,
                             Name = "FX-401R",
                             PVCode = "B",
@@ -224,7 +224,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 2,
-                            Description = "Intelligent Fire Alarm Control Unit c/w 1 Intelligent Loop compatible with MGC Devices 4000 Series only)\r\n       Expandable to three SLCs with the addition of the Dual Loop Controller ALC-480.\r\n       1  20 Character  by 4 Line  Back-Lit LCD Display\r\n       4  Class A/B (Style Z/Y) NAC Circuits\r\n       Four Event Display Queues\r\n       c/w UB-1024DS Universal Backbox & DOX-1024DSR RED Door\r\n       Space for 2 RAX-1048TZDS LED Annunciator Modules\r\n* Standard BLACK Door",
+                            Description = "Intelligent Fire Alarm Control Unit c/w 1 Intelligent Loop compatible with MGC Devices 4000 Series only)\r\n 	Expandable to three SLCs with the addition of the Dual Loop Controller ALC-480.\r\n 	1  20 Character  by 4 Line  Back-Lit LCD Display\r\n 	4  Class A/B (Style Z/Y) NAC Circuits\r\n 	Four Event Display Queues\r\n 	c/w UB-1024DS Universal Backbox & DOX-1024DSR RED Door\r\n 	Space for 2 RAX-1048TZDS LED Annunciator Modules\r\n* Standard BLACK Door",
                             Level = 1,
                             Name = "FX-401B",
                             PVCode = "B",
@@ -414,7 +414,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 21,
-                            Description = "Weather Protected Backbox for Series 1000 Annunciators (Houses 1 Module)\r\n   Dimensions: (11-11/32\" Height, 13\" Width, 3.5\" Depth)\r\n   Rated for Outdoor Environment: +50°C to -40°C - 95% R.H. @60°C\r\n   Lexan sealed window, to protect against the challenges of an outdoor application\r\n   Surface mount application. RED Door.\r\n   NOTE: there is no need for thermostat or heater.  RAM-1032TZDS-CC must be ordered separately to match UL, ULC installation requirements",
+                            Description = "Weather Protected Backbox for Series 1000 Annunciators (Houses 1 Module)\r\n 	Dimensions: (11-11/32\" Height, 13\" Width, 3.5\" Depth)\r\n 	Rated for Outdoor Environment: +50°C to -40°C - 95% R.H. @60°C\r\n 	Lexan sealed window, to protect against the challenges of an outdoor application\r\n 	Surface mount application. RED Door.\r\n 	NOTE: there is no need for thermostat or heater.  RAM-1032TZDS-CC must be ordered separately to match UL, ULC installation requirements",
                             Level = 5,
                             Name = "BB-1001WPRA",
                             PVCode = "B",
@@ -424,7 +424,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 22,
-                            Description = "Weather Protected Backbox for Series 1000 Annunciators (Houses 1 Module)\r\n   Dimensions: (11-11/32\" Height, 13\" Width, 3.5\" Depth)\r\n   Rated for Outdoor Environment: +50°C to -40°C - 95% R.H. @60°C\r\n   Lexan sealed window, to protect against the challenges of an outdoor application\r\n   Surface mount application. WHITE Door.\r\n   NOTE: there is no need for thermostat or heater.  RAM-1032TZDS-CC must be ordered separately to match UL, ULC installation requirements",
+                            Description = "Weather Protected Backbox for Series 1000 Annunciators (Houses 1 Module)\r\n 	Dimensions: (11-11/32\" Height, 13\" Width, 3.5\" Depth)\r\n 	Rated for Outdoor Environment: +50°C to -40°C - 95% R.H. @60°C\r\n 	Lexan sealed window, to protect against the challenges of an outdoor application\r\n 	Surface mount application. WHITE Door.\r\n 	NOTE: there is no need for thermostat or heater.  RAM-1032TZDS-CC must be ordered separately to match UL, ULC installation requirements",
                             Level = 5,
                             Name = "BB-1001WPA",
                             PVCode = "B",
@@ -474,7 +474,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 27,
-                            Description = "Weather Protected Backbox for Series 1000 Annunciators (Houses 2 Module)\r\n   Dimensions: (11-11/32\" Height, 13\" Width, 3.5\" Depth)\r\n   Rated for Outdoor Environment: +50°C to -40°C - 95% R.H. @60°C\r\n   Lexan sealed window, to protect against the challenges of an outdoor application\r\n   Surface mount application. RED Door.\r\n   NOTE: there is no need for thermostat or heater. RAM-1032TZDS-CC and RAX-1048TZDS-CC must be ordered separately to match UL, ULC installation requirements.",
+                            Description = "Weather Protected Backbox for Series 1000 Annunciators (Houses 2 Module)\r\n 	Dimensions: (11-11/32\" Height, 13\" Width, 3.5\" Depth)\r\n 	Rated for Outdoor Environment: +50°C to -40°C - 95% R.H. @60°C\r\n 	Lexan sealed window, to protect against the challenges of an outdoor application\r\n 	Surface mount application. RED Door.\r\n 	NOTE: there is no need for thermostat or heater. RAM-1032TZDS-CC and RAX-1048TZDS-CC must be ordered separately to match UL, ULC installation requirements.",
                             Level = 5,
                             Name = "BB-1002WPRA",
                             PVCode = "B",
@@ -484,7 +484,7 @@ namespace SmartProductQuotationTool.Migrations
                         new
                         {
                             InventoryId = 28,
-                            Description = "Weather Protected Backbox for Series 1000 Annunciators (Houses 2 Module)\r\n   Dimensions: (11-11/32\" Height, 13\" Width, 3.5\" Depth)\r\n   Rated for Outdoor Environment: +50°C to -40°C - 95% R.H. @60°C\r\n   Lexan sealed window, to protect against the challenges of an outdoor application\r\n   Surface mount application. WHITE Door.\r\n   NOTE: there is no need for thermostat or heater. RAM-1032TZDS-CC and RAX-1048TZDS-CC must be ordered separately to match UL, ULC installation requirements.",
+                            Description = "Weather Protected Backbox for Series 1000 Annunciators (Houses 2 Module)\r\n 	Dimensions: (11-11/32\" Height, 13\" Width, 3.5\" Depth)\r\n 	Rated for Outdoor Environment: +50°C to -40°C - 95% R.H. @60°C\r\n 	Lexan sealed window, to protect against the challenges of an outdoor application\r\n 	Surface mount application. WHITE Door.\r\n 	NOTE: there is no need for thermostat or heater. RAM-1032TZDS-CC and RAX-1048TZDS-CC must be ordered separately to match UL, ULC installation requirements.",
                             Level = 5,
                             Name = "BB-1002WPA",
                             PVCode = "C",
