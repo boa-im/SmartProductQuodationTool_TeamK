@@ -1,9 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\SmartProductQuotationTool",
-    "\\SmartProductQuotationTool\\DataAccess"
+    ""
   ],
-  "SelectedNode": "\\SmartProductQuotationTool\\DataAccess\\SPQTDbContext.cs",
   "PreviewInSolutionExplorer": false
 }

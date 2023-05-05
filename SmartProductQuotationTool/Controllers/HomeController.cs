@@ -37,12 +37,45 @@ namespace SmartProductQuotationTool.Controllers
                 discountRate = (double)users.Find(u => u.UserName == username).DiscountRate;
             }
 
+            //For badge
+            List<Inventory> findInventory = new List<Inventory>();
+            var Qty = new Dictionary<string, int>();
+            User currentUser = users.Find(u => u.UserName == username);
+            if(currentUser != null)
+            {
+                var cartList = _context.Carts.Where(m => m.User.Id == currentUser.Id).ToList();
 
+                foreach (var list in cartList)
+                {
+                    Inventory item = _context.Inventories.Where(m => m.InventoryId == list.InventoryId).FirstOrDefault();
+                    findInventory.Add(item);
+                }
+
+                findInventory = findInventory.OrderBy(m => m.Name).ToList();
+
+                foreach (var item in findInventory)
+                {
+                    if (!Qty.ContainsKey(item.Name))
+                    {
+                        Qty.Add(item.Name, 1);
+                    }
+                    else
+                    {
+                        Qty[item.Name]++;
+                    }
+                }
+
+                findInventory = findInventory.Distinct().ToList();
+            }
+
+            
 
             ListViewModel listViewModel = new ListViewModel()
             {
                 Inventories = _context.Inventories.Where(i => i.Level == level).ToList(),
-                DiscountRate = discountRate
+                DiscountRate = discountRate,
+                Carts = findInventory,
+                Qty = Qty
             };
             return View(listViewModel);
         }

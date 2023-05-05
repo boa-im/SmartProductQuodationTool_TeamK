@@ -60,7 +60,7 @@ namespace SmartProductQuotationTool.Controllers
                 }
             }
 
-            return GetAllCart();
+            return RedirectToAction("GetAllCart", "Cart");
         }
 
         [HttpGet("/cart/delete")]
@@ -86,6 +86,7 @@ namespace SmartProductQuotationTool.Controllers
         }
 
         [HttpGet("/cart")]
+        [Authorize()]
         public IActionResult GetAllCart()
         {
             string? username = HttpContext.User.Identity.Name;
@@ -96,12 +97,9 @@ namespace SmartProductQuotationTool.Controllers
             List<Inventory> findInventory = new List<Inventory>();
             var Qty = new Dictionary<string, int>();
 
-            int maxLevel = 0;
-
             foreach (var list in cartList)
             {
                 Inventory item = _context.Inventories.Where(m => m.InventoryId == list.InventoryId).FirstOrDefault();
-                maxLevel = item.Level > maxLevel ? item.Level : maxLevel;
                 findInventory.Add(item);
             }
 
@@ -126,8 +124,13 @@ namespace SmartProductQuotationTool.Controllers
                 Carts = findInventory,
                 currentUser = currentUser,
                 Qty = Qty,
-                RecommendedProduct = maxLevel < 7 ? _context.Inventories.Where(i => i.Level == maxLevel + 1).FirstOrDefault() : _context.Inventories.Where(i => i.Level == maxLevel).FirstOrDefault()
+                RecommendedProducts = _context.Inventories.Where(i => i.Level == 7).ToList()
             };
+
+            for (int level = 7; level >= 1; level--)
+            {
+                cartViewModel.RecommendedProducts = _context.Carts.Where(c => c.Inventory.Level == level).FirstOrDefault() == null ? _context.Inventories.Where(i => i.Level == level).ToList() : cartViewModel.RecommendedProducts;
+            }
 
             return View("Cart", cartViewModel);
         }

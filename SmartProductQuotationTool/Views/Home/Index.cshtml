@@ -1,16 +1,16 @@
 ﻿@model ListViewModel
 
-
-
 @{
     ViewData["Title"] = "Products Page";
+    int qty = 0;
+    foreach (var item in Model.Carts)
+    {
+        qty += Model.Qty[item.Name];
+    }
+    ViewData["Qty"] = qty;
 }
 
-
-
 <div class="text-center">
-
-
 
     <ul class="list-group list-group-horizontal mb-2">
         <span class="list-group-item">Level: </span>

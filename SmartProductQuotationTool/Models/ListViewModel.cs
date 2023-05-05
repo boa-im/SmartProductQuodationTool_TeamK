@@ -6,5 +6,7 @@ namespace SmartProductQuotationTool.Models
     {
         public List<Inventory>? Inventories { get; set; }
         public double DiscountRate { get; set; }
+        public List<Inventory>? Carts { get; set; }
+        public Dictionary<string, int> Qty { get; set; }
     }
 }
