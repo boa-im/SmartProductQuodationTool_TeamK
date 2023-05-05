@@ -9,5 +9,6 @@
         public double Price { get; set; }
         public string? PVCode { get; set; }
         public int? Qty { get; set;}
+        public string? Image { get; set; } = "";
     }
 }

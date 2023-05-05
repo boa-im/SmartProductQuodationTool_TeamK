@@ -34,7 +34,7 @@
             @foreach (var item in Model.Inventories)
             {
                 <tr>
-                    <td>@item.Name</td>
+                    <td>@item.Name <br/> <img src="@Url.Content(item.Image)" width="70px"/> </td>
                     <td class="w-50 text-start">
                         @foreach (var line in item.Description.Split("\r\n"))
                         {

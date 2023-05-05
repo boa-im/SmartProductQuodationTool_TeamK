@@ -189,6 +189,9 @@ namespace SmartProductQuotationTool.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Level")
                         .HasColumnType("int");
 
@@ -213,6 +216,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 1,
                             Description = "Intelligent Fire Alarm Control Unit c/w 1 Intelligent Loop compatible with MGC Devices 4000 Series only)\r\n 	Expandable to three SLCs with the addition of the Dual Loop Controller ALC-480.\r\n 	1  20 Character  by 4 Line  Back-Lit LCD Display\r\n 	4  Class A/B (Style Z/Y) NAC Circuits\r\n 	Four Event Display Queues\r\n 	c/w UB-1024DS Universal Backbox & DOX-1024DSR RED Door\r\n 	Space for 2 RAX-1048TZDS LED Annunciator Modules\r\n* Standard RED Door",
+                            Image = "https://mircom.com/wp-content/uploads/products/FX-401-front_sm-1.jpg",
                             Level = 1,
                             Name = "FX-401R",
                             PVCode = "B",
@@ -223,6 +227,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 2,
                             Description = "Intelligent Fire Alarm Control Unit c/w 1 Intelligent Loop compatible with MGC Devices 4000 Series only)\r\n 	Expandable to three SLCs with the addition of the Dual Loop Controller ALC-480.\r\n 	1  20 Character  by 4 Line  Back-Lit LCD Display\r\n 	4  Class A/B (Style Z/Y) NAC Circuits\r\n 	Four Event Display Queues\r\n 	c/w UB-1024DS Universal Backbox & DOX-1024DSR RED Door\r\n 	Space for 2 RAX-1048TZDS LED Annunciator Modules\r\n* Standard BLACK Door",
+                            Image = "https://mircom.com/wp-content/uploads/products/FX-401-front_sm-1.jpg",
                             Level = 1,
                             Name = "FX-401B",
                             PVCode = "B",
@@ -233,6 +238,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 3,
                             Description = "Remote LCD Annunciator, MIMIC Display for FX-400, FX-401, FX-3318, FX-3500 c/w Large 4 x 20 Character Back-Lit LCD Display, Four Event Display Queues. Common Controls, Mounts in BB-1000 Series Enclosure",
+                            Image = "https://mircom.com/wp-content/uploads/products/RAX-LCD-LITE.png",
                             Level = 2,
                             Name = "RAX-LCD-LITE",
                             PVCode = "B",
@@ -243,6 +249,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 4,
                             Description = "Main Annunciator Chassis  c/w 32 Bi-colored LEDs, 32 Zoned Trouble LEDs\r\nCommon Indicators --\r\nAC On, Common Trouble, Auxiliary Disconnect,\r\n2 Stage Acknowledge & General Alarm Activate (if Config.)\r\nCommon Controls --\r\nReset, Lamp Test,  Fire Drill, Auxiliary Disconnect, \r\nLocal Buzzer & Signal Silence. Mounts in BB-1000 Series Enclosure",
+                            Image = "https://mircom.com/wp-content/uploads/products/RAM-1032TZDS_front.png",
                             Level = 2,
                             Name = "RAM-1032TZDS",
                             PVCode = "A",
@@ -253,6 +260,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 5,
                             Description = "Main Annunciator Chassis  c/w 32 Bi-colored LEDs, 32 Zoned Trouble LEDs\r\nCommon Indicators -- AC On, Common Trouble, Auxiliary Disconnect,\r\n2 Stage Acknowledge & General Alarm Activate (if Config.)\r\nCommon Controls -- Reset, Lamp Test,  Fire Drill, Auxiliary Disconnect, \r\nLocal Buzzer & Signal Silence\r\nMounts in BB-1000 Series enclosure or BB-5008 or BB-5014",
+                            Image = "https://mircom.com/wp-content/uploads/products/RAM-1032TZDS-CC-1-1024x1018.png",
                             Level = 2,
                             Name = "RAM-1032TZDS-CC",
                             PVCode = "B",
@@ -263,6 +271,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 6,
                             Description = "Adder Annunciator Chassis c/w 48 Bi-Coloured LEDs; 48 Zoned Trouble LED's\r\nMounts in BB-1000 Series enclosure",
+                            Image = "https://mircom.com/wp-content/uploads/products/RAX-1048TZDS.png",
                             Level = 2,
                             Name = "RAX-1048TZDS",
                             PVCode = "A",
@@ -273,6 +282,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 7,
                             Description = "Conformal Coated Adder Annunciator Chassis c/w 48 Bi-Coloured LEDs; 48 Zoned Trouble LED's. Mounts in BB-1000 or BB-5000 Series Enclosure.",
+                            Image = "https://mircom.com/wp-content/uploads/products/RAX-1048TZS-CC-1-1024x961.png",
                             Level = 2,
                             Name = "RAX-1048TZDS-CC",
                             PVCode = "B",
@@ -283,6 +293,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 8,
                             Description = "Interface for Configuring FleXNet™, FA-300 Series, FX-2000 Series, FX-401, FX-3500, QX-5000, UDACT-300, and MR-2300 Series",
+                            Image = "https://mircom.com/wp-content/uploads/products/UIMA4.png",
                             Level = 3,
                             Name = "UIMA4",
                             PVCode = "A",
@@ -293,6 +304,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 9,
                             Description = "Fire Panel Configuration Kit4 With UIMA4",
+                            Image = "",
                             Level = 3,
                             Name = "MGC-CONFIG-KIT4",
                             PVCode = "B",
@@ -303,6 +315,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 10,
                             Description = "FX-401 Dual Loop Controller Module 480 points (MGC Devices 4000 Series Compatible)",
+                            Image = "",
                             Level = 4,
                             Name = "ALC-480",
                             PVCode = "B",
@@ -313,6 +326,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 11,
                             Description = "Polarity Reversal & City Tie c/w Alarm, Supervisory & Trouble Transmit Capabilities",
+                            Image = "https://mircom.com/wp-content/uploads/products/PR-300.png",
                             Level = 4,
                             Name = "PR-300",
                             PVCode = "B",
@@ -323,6 +337,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 12,
                             Description = "Adder Graphic Driver Board, c/w 48 Supervised Outputs, Output Connections via Terminals or Ribbon Cable\r\nMounts in Graphic Wall box",
+                            Image = "https://mircom.com/wp-content/uploads/products/AGD-048-front.jpg",
                             Level = 4,
                             Name = "AGD-048",
                             PVCode = "B",
@@ -333,6 +348,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 13,
                             Description = "Master Graphic Driver Board c/w, Fire Alarm Common Control Switch Inputs & LED Outputs\r\n32 Supervised Outputs, Output Connections via Terminals or Ribbon Cable\r\nMounts in Graphic Wall box",
+                            Image = "https://mircom.com/wp-content/uploads/products/MGD-32-front.jpg",
                             Level = 4,
                             Name = "MGD-32",
                             PVCode = "B",
@@ -343,6 +359,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 14,
                             Description = "Power Supply Interface Board",
+                            Image = "",
                             Level = 4,
                             Name = "PCS-100",
                             PVCode = "B",
@@ -353,6 +370,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 15,
                             Description = "Solenoid End of Line Resistor 47K, White Plate",
+                            Image = "",
                             Level = 4,
                             Name = "MP-3500W",
                             PVCode = "B",
@@ -363,6 +381,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 16,
                             Description = "SMART Relay Module with Enclosure (12) RED",
+                            Image = "https://mircom.com/wp-content/uploads/products/SRM-312R_right.jpg",
                             Level = 4,
                             Name = "SRM-312R",
                             PVCode = "C",
@@ -373,6 +392,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 17,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators (Houses 1 Module)\r\nRED Door & Black Backbox (12.75\"W X 9\"L X 1.85\"D without door)\r\nMounts over standard electrical box by others",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1001DR.png",
                             Level = 5,
                             Name = "BB-1001DR",
                             PVCode = "B",
@@ -383,6 +403,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 18,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators (Houses 1 Module)\r\nWHITE Door & Black Backbox (12.75\"W X 9\"L X 1.85\"D without door)\r\nMounts over standard electrical box by others",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1001DR.png",
                             Level = 5,
                             Name = "BB-1001D",
                             PVCode = "A",
@@ -393,6 +414,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 19,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators (Houses 1 Module)\r\nBLACK Door & Black Backbox (12.75\"W X 9\"L X 1.85\"D without door)\r\nMounts over standard electrical box by others",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1001DR.png",
                             Level = 5,
                             Name = "BB-1001DB",
                             PVCode = "B",
@@ -403,6 +425,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 20,
                             Description = "NEW Semi-Flush Backbox for Series 1000 Annunciators (Houses 1 Module)\r\nStainless Steel Finish\r\nMounts over standard electrical box by others",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1001DR.png",
                             Level = 5,
                             Name = "BB-1001DS",
                             PVCode = "C",
@@ -413,6 +436,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 21,
                             Description = "Weather Protected Backbox for Series 1000 Annunciators (Houses 1 Module)\r\n 	Dimensions: (11-11/32\" Height, 13\" Width, 3.5\" Depth)\r\n 	Rated for Outdoor Environment: +50°C to -40°C - 95% R.H. @60°C\r\n 	Lexan sealed window, to protect against the challenges of an outdoor application\r\n 	Surface mount application. RED Door.\r\n 	NOTE: there is no need for thermostat or heater.  RAM-1032TZDS-CC must be ordered separately to match UL, ULC installation requirements",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1001_WPRA_Remote_Outdoor_Annunciator_Conformal_Coated_UL_ULC_approved_Weather_Protected_Fire_Label-1.png",
                             Level = 5,
                             Name = "BB-1001WPRA",
                             PVCode = "B",
@@ -423,6 +447,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 22,
                             Description = "Weather Protected Backbox for Series 1000 Annunciators (Houses 1 Module)\r\n 	Dimensions: (11-11/32\" Height, 13\" Width, 3.5\" Depth)\r\n 	Rated for Outdoor Environment: +50°C to -40°C - 95% R.H. @60°C\r\n 	Lexan sealed window, to protect against the challenges of an outdoor application\r\n 	Surface mount application. WHITE Door.\r\n 	NOTE: there is no need for thermostat or heater.  RAM-1032TZDS-CC must be ordered separately to match UL, ULC installation requirements",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1001_WPRA_Remote_Outdoor_Annunciator_Conformal_Coated_UL_ULC_approved_Weather_Protected_Fire_Label-1.png",
                             Level = 5,
                             Name = "BB-1001WPA",
                             PVCode = "B",
@@ -433,6 +458,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 23,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 2 Modules) \r\nRED Door & Black Backbox (18”H x 12.75”W x 1.85”D)\r\nMounts over standard electrical box by others",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1002DS.png",
                             Level = 5,
                             Name = "BB-1002DR",
                             PVCode = "B",
@@ -443,6 +469,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 24,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 2 Modules) \r\nWHITE Door & Black Backbox (18”H x 12.75”W x 1.85”D)\r\nMounts over standard electrical box by others",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1002DS.png",
                             Level = 5,
                             Name = "BB-1002D",
                             PVCode = "B",
@@ -453,6 +480,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 25,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 2 Modules) \r\nBLACK Door & Black Backbox (18”H x 12.75”W x 1.85”D)\r\nMounts over standard electrical box by others",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1002DS.png",
                             Level = 5,
                             Name = "BB-1002DB",
                             PVCode = "B",
@@ -463,6 +491,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 26,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 2 Modules) \r\nStainless Steel Finish (18”H x 12.75”W x 1.85”D)\r\nMounts over standard electrical box by others",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1002DS.png",
                             Level = 5,
                             Name = "BB-1002DS",
                             PVCode = "C",
@@ -473,6 +502,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 27,
                             Description = "Weather Protected Backbox for Series 1000 Annunciators (Houses 2 Module)\r\n 	Dimensions: (11-11/32\" Height, 13\" Width, 3.5\" Depth)\r\n 	Rated for Outdoor Environment: +50°C to -40°C - 95% R.H. @60°C\r\n 	Lexan sealed window, to protect against the challenges of an outdoor application\r\n 	Surface mount application. RED Door.\r\n 	NOTE: there is no need for thermostat or heater. RAM-1032TZDS-CC and RAX-1048TZDS-CC must be ordered separately to match UL, ULC installation requirements.",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1002WPRA_Remote_Outdoor_Annunciator_Conformal_Coated_UL_ULC_label-1-1000x1000.png",
                             Level = 5,
                             Name = "BB-1002WPRA",
                             PVCode = "B",
@@ -483,6 +513,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 28,
                             Description = "Weather Protected Backbox for Series 1000 Annunciators (Houses 2 Module)\r\n 	Dimensions: (11-11/32\" Height, 13\" Width, 3.5\" Depth)\r\n 	Rated for Outdoor Environment: +50°C to -40°C - 95% R.H. @60°C\r\n 	Lexan sealed window, to protect against the challenges of an outdoor application\r\n 	Surface mount application. WHITE Door.\r\n 	NOTE: there is no need for thermostat or heater. RAM-1032TZDS-CC and RAX-1048TZDS-CC must be ordered separately to match UL, ULC installation requirements.",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1002WPRA_Remote_Outdoor_Annunciator_Conformal_Coated_UL_ULC_label-1-1000x1000.png",
                             Level = 5,
                             Name = "BB-1002WPA",
                             PVCode = "C",
@@ -493,6 +524,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 29,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 3 Modules)\r\nRED Door & Black Backbox (12.75\"W X 26.4\"L X 1.85\"D) without door\r\nMounts over standard electrical box by others",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1003D.png",
                             Level = 5,
                             Name = "BB-1003DR",
                             PVCode = "C",
@@ -503,6 +535,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 30,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 3 Modules)\r\nWHITE Door & Black Backbox (12.75\"W X 26.4\"L X 1.85\"D) without door\r\nMounts over standard electrical box by others",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1003D.png",
                             Level = 5,
                             Name = "BB-1003D",
                             PVCode = "B",
@@ -513,6 +546,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 31,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 3 Modules)\r\nBLACK Door & Black Backbox (12.75\"W X 26.4\"L X 1.85\"D) without door\r\nMounts over standard electrical box by others",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1003D.png",
                             Level = 5,
                             Name = "BB-1003DB",
                             PVCode = "C",
@@ -523,6 +557,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 32,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 3 Modules)\r\nStainless Steel Finish (12.75\"W X 26.4\"L X 1.85\"D) without door\r\nMounts over standard electrical box by others",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1003D.png",
                             Level = 5,
                             Name = "BB-1003DS",
                             PVCode = "C",
@@ -533,6 +568,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 33,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 8 Modules)\r\nRED  Door & Black Backbox (33”H x 22.5”W x 1.85”D)\r\nMounts over standard electrical box by others",
+                            Image = "",
                             Level = 5,
                             Name = "BB-1008DR",
                             PVCode = "C",
@@ -543,6 +579,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 34,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 8 Modules)\r\nWHITE  Door & Black Backbox (33”H x 22.5”W x 1.85”D)\r\nMounts over standard electrical box by others",
+                            Image = "",
                             Level = 5,
                             Name = "BB-1008D",
                             PVCode = "B",
@@ -553,6 +590,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 35,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 8 Modules)\r\nBLACK Door & Black Backbox (33”H x 22.5”W x 1.85”D)\r\nMounts over standard electrical box by others",
+                            Image = "",
                             Level = 5,
                             Name = "BB-1008DB",
                             PVCode = "C",
@@ -563,6 +601,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 36,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 12 Modules)\r\nRED Door & Black Backbox (45”H x 22.5”W x 1.85”D)\r\nMounts Over Standard Electrical Box by Others",
+                            Image = "https://mircom.com/wp-content/uploads/2016/10/products-bb-1012-remote-enclosure.jpg",
                             Level = 5,
                             Name = "BB-1012DR",
                             PVCode = "C",
@@ -573,6 +612,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 37,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 12 Modules)\r\nWHITE Door & Black Backbox (45”H x 22.5”W x 1.85”D)\r\nMounts Over Standard Electrical Box by Others",
+                            Image = "https://mircom.com/wp-content/uploads/2016/10/products-bb-1012-remote-enclosure.jpg",
                             Level = 5,
                             Name = "BB-1012D",
                             PVCode = "C",
@@ -583,6 +623,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 38,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 12 Modules)\r\nBLACK Door & Black Backbox (45”H x 22.5”W x 1.85”D)\r\nMounts Over Standard Electrical Box by Others",
+                            Image = "https://mircom.com/wp-content/uploads/2016/10/products-bb-1012-remote-enclosure.jpg",
                             Level = 5,
                             Name = "BB-1012DB",
                             PVCode = "C",
@@ -593,6 +634,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 39,
                             Description = "4000 Series Photoelectric Detector W/O Isolation",
+                            Image = "https://mircom.com/wp-content/uploads/products/MIX-4010-MIX-4020-tilt_lg.jpg",
                             Level = 6,
                             Name = "MIX-4010",
                             PVCode = "A",
@@ -603,6 +645,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 40,
                             Description = "4000 Series Photoelectric Detector with Isolation",
+                            Image = "https://mircom.com/wp-content/uploads/products/MIX-4010-MIX-4020-tilt_lg.jpg",
                             Level = 6,
                             Name = "MIX-4010-ISO",
                             PVCode = "A",
@@ -613,6 +656,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 41,
                             Description = "4000 Series Multi Sensor - Photoelectric heat W/O Isolation",
+                            Image = "https://mircom.com/wp-content/uploads/products/MIX-4010-MIX-4020-tilt_lg.jpg",
                             Level = 6,
                             Name = "MIX-4020",
                             PVCode = "A",
@@ -623,6 +667,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 42,
                             Description = "4000 Series Multi Sensor - Photoelectric heat with Isolation",
+                            Image = "https://mircom.com/wp-content/uploads/products/MIX-4010-MIX-4020-tilt_lg.jpg",
                             Level = 6,
                             Name = "MIX-4020-ISO",
                             PVCode = "B",
@@ -633,6 +678,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 43,
                             Description = "4000 Series Tri-Mode Heat Detector W/O Isolation",
+                            Image = "https://mircom.com/wp-content/uploads/products/MIX-4030-tilt_lg.jpg",
                             Level = 6,
                             Name = "MIX-4030",
                             PVCode = "A",
@@ -643,6 +689,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 44,
                             Description = "4000 Series Tri-Mode Heat Detector with Isolation",
+                            Image = "https://mircom.com/wp-content/uploads/products/MIX-4030-tilt_lg.jpg",
                             Level = 6,
                             Name = "MIX-4030-ISO",
                             PVCode = "A",
@@ -653,6 +700,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 45,
                             Description = "4000 Series 6\" Detector Base",
+                            Image = "https://mircom.com/wp-content/uploads/products/bases-2-1.jpg",
                             Level = 6,
                             Name = "MIX-4001",
                             PVCode = "A",
@@ -663,6 +711,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 46,
                             Description = "4000 Series 4\" Detector Base",
+                            Image = "https://mircom.com/wp-content/uploads/products/bases-2-1.jpg",
                             Level = 6,
                             Name = "MIX-4002",
                             PVCode = "A",
@@ -673,6 +722,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 47,
                             Description = "4000 Series Relay Base",
+                            Image = "https://mircom.com/wp-content/uploads/products/MIX-4003-S-R-with-MIX-4020-ISO-1-scaled.jpg",
                             Level = 6,
                             Name = "MIX-4003-R",
                             PVCode = "B",
@@ -683,6 +733,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 48,
                             Description = "4000 Series Sounder Base",
+                            Image = "https://mircom.com/wp-content/uploads/products/MIX-4003-S-R-with-MIX-4010-ISO-1.jpg",
                             Level = 6,
                             Name = "MIX-4003-S",
                             PVCode = "B",
@@ -693,6 +744,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 49,
                             Description = "4000 Series Addressable Device Programmer",
+                            Image = "https://mircom.com/wp-content/uploads/products/MIX-4090.png",
                             Level = 6,
                             Name = "MIX-4090",
                             PVCode = "A",
@@ -703,6 +755,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 50,
                             Description = "4000 Series Dual Input Module",
+                            Image = "https://mircom.com/wp-content/uploads/products/MIX-4040.jpg",
                             Level = 6,
                             Name = "MIX-4040",
                             PVCode = "A",
@@ -713,6 +766,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 51,
                             Description = "4000 Series Mini Dual Input Module",
+                            Image = "https://mircom.com/wp-content/uploads/products/MIX-4041-e1604012409118.jpg",
                             Level = 6,
                             Name = "MIX-4041",
                             PVCode = "A",
@@ -723,6 +777,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 52,
                             Description = "4000 Series Conventional Zone Module",
+                            Image = "https://mircom.com/wp-content/uploads/products/MIX-4042.jpg",
                             Level = 6,
                             Name = "MIX-4042",
                             PVCode = "B",
@@ -733,6 +788,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 53,
                             Description = "4000 Series Dual Relay Module",
+                            Image = "https://mircom.com/wp-content/uploads/products/MIX-4045.jpg",
                             Level = 6,
                             Name = "MIX-4045",
                             PVCode = "A",
@@ -743,6 +799,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 54,
                             Description = "4000 Series Supervised Output Module",
+                            Image = "https://mircom.com/wp-content/uploads/products/MIX-4046.jpg",
                             Level = 6,
                             Name = "MIX-4046",
                             PVCode = "A",
@@ -753,6 +810,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 55,
                             Description = "Sync Module",
+                            Image = "https://mircom.com/wp-content/uploads/products/MIX-4050.png",
                             Level = 6,
                             Name = "MIX-4050",
                             PVCode = "A",
@@ -763,6 +821,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 56,
                             Description = "4000 Series Isolator Module",
+                            Image = "https://mircom.com/wp-content/uploads/products/MIX-4070.jpg",
                             Level = 6,
                             Name = "MIX-4070",
                             PVCode = "A",
@@ -773,6 +832,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 57,
                             Description = "MP 1 STAGE ADDR DOUBLE ACTION PULL STATION ULC",
+                            Image = "https://mircom.com/wp-content/uploads/products/MPS-810.png",
                             Level = 7,
                             Name = "MPS-810MP",
                             PVCode = "N",
@@ -783,6 +843,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 58,
                             Description = "MP 2 STAGE ADDRESSABLE PULL STATION ULC",
+                            Image = "",
                             Level = 7,
                             Name = "MPS-802MP",
                             PVCode = "N",
@@ -793,6 +854,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 59,
                             Description = "MP MAGLOCK 2 STAGE ADDR DOUBLE ACTION PULL STATION ULC",
+                            Image = "",
                             Level = 7,
                             Name = "MPS-822MP",
                             PVCode = "N",
@@ -803,6 +865,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 60,
                             Description = "Surface Backbox For 800 Series Manual Station",
+                            Image = "",
                             Level = 7,
                             Name = "BB-800",
                             PVCode = "N",
