@@ -41,10 +41,11 @@ namespace SmartProductQuotationTool.Controllers
             List<Inventory> findInventory = new List<Inventory>();
             var Qty = new Dictionary<string, int>();
             User currentUser = users.Find(u => u.UserName == username);
-            if(currentUser != null)
-            {
-                var cartList = _context.Carts.Where(m => m.User.Id == currentUser.Id).ToList();
+            List<Cart> cartList = new List<Cart>();
 
+            if (currentUser != null)
+            {
+                cartList = _context.Carts.Where(m => m.User.Id == currentUser.Id).ToList();
                 foreach (var list in cartList)
                 {
                     Inventory item = _context.Inventories.Where(m => m.InventoryId == list.InventoryId).FirstOrDefault();
@@ -52,20 +53,6 @@ namespace SmartProductQuotationTool.Controllers
                 }
 
                 findInventory = findInventory.OrderBy(m => m.Name).ToList();
-
-                foreach (var item in findInventory)
-                {
-                    if (!Qty.ContainsKey(item.Name))
-                    {
-                        Qty.Add(item.Name, 1);
-                    }
-                    else
-                    {
-                        Qty[item.Name]++;
-                    }
-                }
-
-                findInventory = findInventory.Distinct().ToList();
             }
 
             
@@ -75,7 +62,7 @@ namespace SmartProductQuotationTool.Controllers
                 Inventories = _context.Inventories.Where(i => i.Level == level).ToList(),
                 DiscountRate = discountRate,
                 Carts = findInventory,
-                Qty = Qty
+                Items = cartList
             };
             return View(listViewModel);
         }

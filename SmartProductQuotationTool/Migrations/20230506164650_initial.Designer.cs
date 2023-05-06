@@ -12,7 +12,7 @@ using SmartProductQuotationTool.DataAccess;
 namespace SmartProductQuotationTool.Migrations
 {
     [DbContext(typeof(SPQTDbContext))]
-    [Migration("20230505232230_initial")]
+    [Migration("20230506164650_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -168,6 +168,9 @@ namespace SmartProductQuotationTool.Migrations
                     b.Property<int>("InventoryId")
                         .HasColumnType("int");
 
+                    b.Property<int>("Qty")
+                        .HasColumnType("int");
+
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
@@ -218,7 +221,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 1,
                             Description = "Intelligent Fire Alarm Control Unit c/w 1 Intelligent Loop compatible with MGC Devices 4000 Series only)\r\n 	Expandable to three SLCs with the addition of the Dual Loop Controller ALC-480.\r\n 	1  20 Character  by 4 Line  Back-Lit LCD Display\r\n 	4  Class A/B (Style Z/Y) NAC Circuits\r\n 	Four Event Display Queues\r\n 	c/w UB-1024DS Universal Backbox & DOX-1024DSR RED Door\r\n 	Space for 2 RAX-1048TZDS LED Annunciator Modules\r\n* Standard RED Door",
-                            Image = "https://mircom.com/wp-content/uploads/products/FX-401-front_sm-1.jpg",
+                            Image = "https://mircom.com/wp-content/uploads/products/FX-401R-front_sm.jpg",
                             Level = 1,
                             Name = "FX-401R",
                             PVCode = "B",
@@ -405,7 +408,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 18,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators (Houses 1 Module)\r\nWHITE Door & Black Backbox (12.75\"W X 9\"L X 1.85\"D without door)\r\nMounts over standard electrical box by others",
-                            Image = "https://mircom.com/wp-content/uploads/products/BB-1001DR.png",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1001D_White-1.png",
                             Level = 5,
                             Name = "BB-1001D",
                             PVCode = "A",
@@ -416,7 +419,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 19,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators (Houses 1 Module)\r\nBLACK Door & Black Backbox (12.75\"W X 9\"L X 1.85\"D without door)\r\nMounts over standard electrical box by others",
-                            Image = "https://mircom.com/wp-content/uploads/products/BB-1001DR.png",
+                            Image = "",
                             Level = 5,
                             Name = "BB-1001DB",
                             PVCode = "B",
@@ -427,7 +430,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 20,
                             Description = "NEW Semi-Flush Backbox for Series 1000 Annunciators (Houses 1 Module)\r\nStainless Steel Finish\r\nMounts over standard electrical box by others",
-                            Image = "https://mircom.com/wp-content/uploads/products/BB-1001DR.png",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1001DS.png",
                             Level = 5,
                             Name = "BB-1001DS",
                             PVCode = "C",
@@ -471,7 +474,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 24,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 2 Modules) \r\nWHITE Door & Black Backbox (18”H x 12.75”W x 1.85”D)\r\nMounts over standard electrical box by others",
-                            Image = "https://mircom.com/wp-content/uploads/products/BB-1002DS.png",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1002D_White-1.png",
                             Level = 5,
                             Name = "BB-1002D",
                             PVCode = "B",
@@ -482,7 +485,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 25,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 2 Modules) \r\nBLACK Door & Black Backbox (18”H x 12.75”W x 1.85”D)\r\nMounts over standard electrical box by others",
-                            Image = "https://mircom.com/wp-content/uploads/products/BB-1002DS.png",
+                            Image = "",
                             Level = 5,
                             Name = "BB-1002DB",
                             PVCode = "B",
@@ -493,7 +496,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 26,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 2 Modules) \r\nStainless Steel Finish (18”H x 12.75”W x 1.85”D)\r\nMounts over standard electrical box by others",
-                            Image = "https://mircom.com/wp-content/uploads/products/BB-1002DS.png",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1002DS-1.png",
                             Level = 5,
                             Name = "BB-1002DS",
                             PVCode = "C",
@@ -537,7 +540,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 30,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 3 Modules)\r\nWHITE Door & Black Backbox (12.75\"W X 26.4\"L X 1.85\"D) without door\r\nMounts over standard electrical box by others",
-                            Image = "https://mircom.com/wp-content/uploads/products/BB-1003D.png",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1003D_White.png",
                             Level = 5,
                             Name = "BB-1003D",
                             PVCode = "B",
@@ -548,7 +551,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 31,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 3 Modules)\r\nBLACK Door & Black Backbox (12.75\"W X 26.4\"L X 1.85\"D) without door\r\nMounts over standard electrical box by others",
-                            Image = "https://mircom.com/wp-content/uploads/products/BB-1003D.png",
+                            Image = "",
                             Level = 5,
                             Name = "BB-1003DB",
                             PVCode = "C",
@@ -559,7 +562,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 32,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 3 Modules)\r\nStainless Steel Finish (12.75\"W X 26.4\"L X 1.85\"D) without door\r\nMounts over standard electrical box by others",
-                            Image = "https://mircom.com/wp-content/uploads/products/BB-1003D.png",
+                            Image = "https://mircom.com/wp-content/uploads/products/BB-1003DS.png",
                             Level = 5,
                             Name = "BB-1003DS",
                             PVCode = "C",
@@ -614,7 +617,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 37,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 12 Modules)\r\nWHITE Door & Black Backbox (45”H x 22.5”W x 1.85”D)\r\nMounts Over Standard Electrical Box by Others",
-                            Image = "https://mircom.com/wp-content/uploads/2016/10/products-bb-1012-remote-enclosure.jpg",
+                            Image = "",
                             Level = 5,
                             Name = "BB-1012D",
                             PVCode = "C",
@@ -625,7 +628,7 @@ namespace SmartProductQuotationTool.Migrations
                         {
                             InventoryId = 38,
                             Description = "Semi-Flush Backbox for Series 1000 Annunciators  (Houses 12 Modules)\r\nBLACK Door & Black Backbox (45”H x 22.5”W x 1.85”D)\r\nMounts Over Standard Electrical Box by Others",
-                            Image = "https://mircom.com/wp-content/uploads/2016/10/products-bb-1012-remote-enclosure.jpg",
+                            Image = "",
                             Level = 5,
                             Name = "BB-1012DB",
                             PVCode = "C",

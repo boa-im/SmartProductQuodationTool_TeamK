@@ -30,35 +30,19 @@ namespace SmartProductQuotationTool.Controllers
             User currentUser = users.Find(u => u.UserName == username);
             Inventory currentInventory = _context.Inventories.Where(m => m.InventoryId == id).FirstOrDefault();
 
-            _context.Carts.Add(new Cart { User = currentUser, Inventory = currentInventory });
+            if (_context.Carts.Where(m => m.InventoryId == id).FirstOrDefault() == null) 
+            {
+                _context.Carts.Add(new Cart { User = currentUser, Inventory = currentInventory, Qty = 1 });
+            }
+            else
+            {
+                _context.Carts.Where(m => m.InventoryId == id).FirstOrDefault().Qty++;
+            }
+            
             _context.SaveChanges();
             currentInventory.Qty--;
             _context.Inventories.Update(currentInventory);
             _context.SaveChanges();
-
-            var cartList = _context.Carts.Where(m => m.User.Id == currentUser.Id).ToList();
-            List<Inventory> findInventory = new List<Inventory>();
-            var Qty = new Dictionary<string, int>();
-
-            foreach (var list in cartList)
-            {
-                Inventory item = _context.Inventories.Where(m => m.InventoryId == list.InventoryId).FirstOrDefault();
-                findInventory.Add(item);
-            }
-
-            findInventory = findInventory.OrderBy(m => m.Name).ToList();
-
-            foreach (var item in findInventory)
-            {
-                if (!Qty.ContainsKey(item.Name))
-                {
-                    Qty.Add(item.Name, 1);
-                }
-                else
-                {
-                    Qty[item.Name]++;
-                }
-            }
 
             return RedirectToAction("GetAllCart", "Cart");
         }
@@ -71,15 +55,12 @@ namespace SmartProductQuotationTool.Controllers
             var users = _userManager.Users.ToList();
             User currentUser = users.Find(u => u.UserName == username);
 
-            List<Cart> cartItems = _context.Carts.Where(c => c.User.Id == currentUser.Id && c.InventoryId == id).ToList();
+            Cart cartItem = _context.Carts.Where(c => c.User.Id == currentUser.Id && c.InventoryId == id).FirstOrDefault();
             Inventory currentInventory = _context.Inventories.Where(c => c.InventoryId == id).FirstOrDefault();
 
-            currentInventory.Qty += cartItems.Count();
+            currentInventory.Qty += cartItem.Qty;
             _context.Inventories.Update(currentInventory);
-            foreach (var item in cartItems)
-            {
-                _context.Carts.Remove(item);
-            }
+            _context.Carts.Remove(cartItem);
             _context.SaveChanges();
 
             return RedirectToAction("GetAllCart", "Cart"); 
@@ -95,7 +76,6 @@ namespace SmartProductQuotationTool.Controllers
 
             var cartList = _context.Carts.Where(m => m.User.Id == currentUser.Id).ToList();
             List<Inventory> findInventory = new List<Inventory>();
-            var Qty = new Dictionary<string, int>();
 
             foreach (var list in cartList)
             {
@@ -105,25 +85,11 @@ namespace SmartProductQuotationTool.Controllers
 
             findInventory = findInventory.OrderBy(m => m.Name).ToList();
 
-            foreach (var item in findInventory)
-            {
-                if (!Qty.ContainsKey(item.Name))
-                {
-                    Qty.Add(item.Name, 1);
-                }
-                else
-                {
-                    Qty[item.Name]++;
-                }
-            }
-
-            findInventory = findInventory.Distinct().ToList();
-
             CartViewModel cartViewModel = new CartViewModel
             {
                 Carts = findInventory,
                 currentUser = currentUser,
-                Qty = Qty,
+                Items = cartList,
                 RecommendedProducts = _context.Inventories.Where(i => i.Level == 7).ToList()
             };
 
@@ -133,6 +99,52 @@ namespace SmartProductQuotationTool.Controllers
             }
 
             return View("Cart", cartViewModel);
+        }
+
+        [HttpPost("/cart/modify")]
+        [Authorize()]
+        public IActionResult Modify(int id, int Qty)
+        {
+            string? username = HttpContext.User.Identity.Name;
+            var users = _userManager.Users.ToList();
+            User currentUser = users.Find(u => u.UserName == username);
+
+            Cart cartItem = _context.Carts.Where(c => c.User.Id == currentUser.Id && c.InventoryId == id).FirstOrDefault();
+            Inventory currentInventory = _context.Inventories.Where(c => c.InventoryId == id).FirstOrDefault();
+
+            if(cartItem.Qty == 0)
+            {
+                currentInventory.Qty += cartItem.Qty;
+                _context.Inventories.Update(currentInventory);
+                _context.Carts.Remove(cartItem);
+                _context.SaveChanges();
+            }
+            else if(cartItem.Qty > 0)
+            {
+                // User wants to decrease the qty
+                if (cartItem.Qty > Qty)
+                {
+                    currentInventory.Qty += (cartItem.Qty - Qty);
+                    _context.Inventories.Update(currentInventory);
+                    cartItem.Qty = Qty;
+                    _context.Carts.Update(cartItem);
+                    _context.SaveChanges();
+                }
+                // User wants to increase the qty
+                else if (cartItem.Qty <= Qty)
+                {
+                    if(currentInventory.Qty >= Qty-cartItem.Qty)
+                    {
+                        currentInventory.Qty -= (Qty - cartItem.Qty);
+                        _context.Inventories.Update(currentInventory);
+                        cartItem.Qty = Qty;
+                        _context.Carts.Update(cartItem);
+                        _context.SaveChanges();
+                    }
+                }
+            }
+
+            return RedirectToAction("GetAllCart", "Cart");
         }
     }
 }

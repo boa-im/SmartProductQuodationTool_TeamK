@@ -5,20 +5,23 @@
     int qty = 0;
     foreach (var item in Model.Carts)
     {
-        qty += Model.Qty[item.Name];
+        qty += Model.Items.Where(m => m.InventoryId == item.InventoryId).FirstOrDefault().Qty;
     }
     ViewData["Qty"] = qty;
 }
 
 <div class="text-center">
-
-    <ul class="list-group list-group-horizontal mb-2">
-        <span class="list-group-item">Level: </span>
-        @for (int i = 0; i < Nav.levels.Length; i++)
-        {
-            <a class="list-group-item @Nav.getActive(i)" asp-controller="Home" asp-action="Index" asp-route-level="@Nav.levels[i]">@Nav.levels[i]</a>
-        }
-    </ul>
+    <div style="display: flex; justify-content: space-between; margin-bottom:20px">
+        <ul class="list-group list-group-horizontal mb-2">
+            <span class="list-group-item">Level: </span>
+            @for (int i = 0; i < Nav.levels.Length; i++)
+            {
+                <a class="list-group-item @Nav.getActive(i)" asp-controller="Home" asp-action="Index" asp-route-level="@Nav.levels[i]">@Nav.levels[i]</a>
+            }
+        </ul>
+        <div class="card" style="width: 50px; height:37px;"><p style="text-align: center; margin:auto;">@Math.Round(Model.DiscountRate)%</p></div>
+    </div>
+    
     <table class="table table-striped table-hover">
         <thead class="table-dark">
             <tr>

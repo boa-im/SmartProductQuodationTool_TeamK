@@ -43,6 +43,7 @@
         <thead style="background-color: midnightblue">
             <tr>
                 <td style="color: white">Qty</td>
+                <td style="color: white">LEVEL</td>
                 <td style ="color: white">MODEL</td>
                 <td style="color: white">DESCRIPTION</td>
                 <td style="color: white">Price EA</td>
@@ -53,9 +54,14 @@
         <tbody>
             @foreach (var item in Model.Carts)
             {
-                qty += Model.Qty[item.Name];
+                Cart cartItem = Model.Items.Where(m => m.InventoryId == item.InventoryId).FirstOrDefault();
+                qty += cartItem.Qty;
                 <tr>
-                    <td>@Model.Qty[item.Name]</td>
+                    <td>
+                        <input type="number" asp-for="@cartItem.Qty" style="margin-bottom:10px; width: 66.57px;"><br />
+                        <a type="button" class="btn btn-success" asp-controller="Cart" asp-action="Modify" asp-route-id="@cartItem.InventoryId" asp-route-Qty="@cartItem.Qty">Modify</a>
+                    </td>
+                    <td>@item.Level</td>
                     <td>@item.Name <br /> <img src="@Url.Content(item.Image)" width="70px" /></td>
                     <td class="w-50 text-start">
                         @foreach (var line in item.Description.Split("\r\n"))
@@ -73,13 +79,13 @@
                         }
                     </td>
                     <td>$@((item.Price * (1 - (Model.currentUser.DiscountRate * 0.01))).ToString("#,##0.00"))</td>
-                    <td>$@(((item.Price * (1 - (Model.currentUser.DiscountRate * 0.01))) * Model.Qty[item.Name]).ToString("#,##0.00"))</td>
+                    <td>$@(((item.Price * (1 - (Model.currentUser.DiscountRate * 0.01))) * cartItem.Qty).ToString("#,##0.00"))</td>
                     <td><a class="btn btn-primary" asp-controller="Cart" asp-action="Delete" asp-route-id="@item.InventoryId">Delete</a></td>
                 </tr>
-                totalPrice += (item.Price * (1 - (Model.currentUser.DiscountRate * 0.01))) * Model.Qty[item.Name];
+                totalPrice += (item.Price * (1 - (Model.currentUser.DiscountRate * 0.01))) * cartItem.Qty;
             }
             <tr style="background-color: midnightblue">
-                <td colspan ='3'></td>
+                <td colspan ='4'></td>
                 <td style="color: white">Order Total</td>
                 <td style="color: white">$@totalPrice.ToString("#,##0.00")</td>
                 <td></td>
@@ -91,6 +97,7 @@
     <table class="table table-striped table-hover">
         <thead class="table-dark">
             <tr>
+                <td>LEVEL</td>
                 <td>MODEL</td>
                 <td>DESCRIPTION</td>
                 <td>PV Code<br />(Lead Time)</td>
@@ -105,6 +112,7 @@
                 @if (item.Qty != 0)
                 {
                     <tr>
+                        <td>@item.Level</td>
                         <td>@item.Name <br /> <img src="@Url.Content(item.Image)" width="70px" /></td>
                         <td class="w-50 text-start">
                             @foreach (var line in item.Description.Split("\r\n"))
