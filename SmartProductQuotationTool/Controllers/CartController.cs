@@ -95,7 +95,11 @@ namespace SmartProductQuotationTool.Controllers
 
             for (int level = 7; level >= 1; level--)
             {
-                cartViewModel.RecommendedProducts = _context.Carts.Where(c => c.Inventory.Level == level).FirstOrDefault() == null ? _context.Inventories.Where(i => i.Level == level).ToList() : cartViewModel.RecommendedProducts;
+                if (_context.Carts.Any(c => c.Inventory.Level == level))
+                {
+                    cartViewModel.RecommendedProducts = _context.Inventories.Where(i => i.Level > level).ToList();
+                    break;
+                }
             }
 
             return View("Cart", cartViewModel);

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\boa\\Source\\Repos\\SmartProductQuodationTool_TeamK\\SmartProductQuotationTool\\SmartProductQuotationTool.csproj": {}
+    "C:\\Users\\boa\\source\\repos\\SmartProductQuodationTool_TeamK\\SmartProductQuotationTool\\SmartProductQuotationTool.csproj": {}
   },
   "projects": {
-    "C:\\Users\\boa\\Source\\Repos\\SmartProductQuodationTool_TeamK\\SmartProductQuotationTool\\SmartProductQuotationTool.csproj": {
+    "C:\\Users\\boa\\source\\repos\\SmartProductQuodationTool_TeamK\\SmartProductQuotationTool\\SmartProductQuotationTool.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\boa\\Source\\Repos\\SmartProductQuodationTool_TeamK\\SmartProductQuotationTool\\SmartProductQuotationTool.csproj",
+        "projectUniqueName": "C:\\Users\\boa\\source\\repos\\SmartProductQuodationTool_TeamK\\SmartProductQuotationTool\\SmartProductQuotationTool.csproj",
         "projectName": "SmartProductQuotationTool",
-        "projectPath": "C:\\Users\\boa\\Source\\Repos\\SmartProductQuodationTool_TeamK\\SmartProductQuotationTool\\SmartProductQuotationTool.csproj",
+        "projectPath": "C:\\Users\\boa\\source\\repos\\SmartProductQuodationTool_TeamK\\SmartProductQuotationTool\\SmartProductQuotationTool.csproj",
         "packagesPath": "C:\\Users\\boa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\boa\\Source\\Repos\\SmartProductQuodationTool_TeamK\\SmartProductQuotationTool\\obj\\",
+        "outputPath": "C:\\Users\\boa\\source\\repos\\SmartProductQuodationTool_TeamK\\SmartProductQuotationTool\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\boa\\AppData\\Roaming\\NuGet\\NuGet.Config",
